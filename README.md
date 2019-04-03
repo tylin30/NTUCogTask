@@ -7,7 +7,7 @@ devtools::install_github("tylin30/NTUCogTask")
 library(NTUCogTask)
 ```
 
-### R Markdown template
+### Data Cleaning R Markdown template
 
 file → New file → R Markdown → from template → Data Cleaning {NTUCogTask}
 
