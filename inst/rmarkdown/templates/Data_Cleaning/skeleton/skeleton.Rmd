@@ -1,0 +1,13 @@
+---
+title: "Template Title"
+author: "Your Name"
+date: "The Date"
+output: html_document
+---
+
+import library
+```{r echo=T,  message=FALSE, warning=FALSE}
+library(tidyverse)
+tidyverse_update()
+```
+

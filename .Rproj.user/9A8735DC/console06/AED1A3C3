@@ -1,0 +1,5 @@
+]0;/home/tylin/R/NTUCogTasktylin@hpc:~/R/NTUCogTask$ [Ktylin@hpc:~/R/NTUCogTask$ ls
+DESCRIPTION  inst  man	NAMESPACE  NTUCogTask.Rproj  R
+]0;/home/tylin/R/NTUCogTasktylin@hpc:~/R/NTUCogTask$ git clone[K[K[K[K[K[K[K[K[Kgit init
+Initialized empty Git repository in /home/tylin/R/NTUCogTask/.git/
+]0;/home/tylin/R/NTUCogTasktylin@hpc:~/R/NTUCogTask$ git add .
