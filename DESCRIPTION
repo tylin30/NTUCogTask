@@ -1,9 +1,9 @@
 Package: NTUCogTask
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Data anaylzing tool for NTUCogTask
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: tylin
+Maintainer: tylin <tylin.amice@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?

@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2442111021",
+    "hash" : "0",
     "id" : "2C896A96",
     "lastKnownWriteTime" : 1554310243,
     "last_content_update" : 1554310243266,
     "path" : "~/R/NTUCogTask/inst/rmarkdown/templates/Data_Cleaning/skeleton/skeleton.Rmd",
     "project_path" : "inst/rmarkdown/templates/Data_Cleaning/skeleton/skeleton.Rmd",
     "properties" : {
-        "cursorPosition" : "12,0",
+        "cursorPosition" : "13,0",
         "scrollLine" : "0"
     },
     "relative_order" : 2,
