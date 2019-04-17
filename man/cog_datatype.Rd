@@ -42,9 +42,7 @@ tylin
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-factorlist <- c("Block","Trial")
-numericlist <- c("RT", "Accuracy")
-srtcrt_df <- cog_datatype(srtcrt_df, factorlist, numericlist)
+srtcrt_df <- cog_datatype(srtcrt_df, "SRTCRT")
 
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,

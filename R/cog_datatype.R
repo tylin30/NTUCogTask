@@ -1,4 +1,11 @@
-cog_datatype <- function(df, factorlist = list(), numericlist = list()){
+cog_datatype <- function(df, Task){
+  #which task
+  if (Task == "SRTCRT"){
+    factorlist <- list("Block", "Trial", "StimulusLocation", "ResponseLocation")
+    numericlist <- list("Accuracy", "RT", "SRT", "CRT")
+  }
+
+
   #common data datatype
   df <- transform(df,
                   Subject = as.factor(Subject),
