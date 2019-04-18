@@ -16,7 +16,7 @@ cog_datatype <- function(df, Task){
     factorlist <- list("Encode", "Encode1", "Encode2", "Encode3", "Encode4", "Test", "Test1", "Test2", "Test4", "Condition")
     numericlist <- list("ACC", "RT", "e1t1ACC", "e1t1RT", "e1t4ACC", "e1t4RT", "e4t1ACC", "e4t1RT", "e4t4ACC", "e4t4RT", "MeanACC", "MeanRT")
   }
-  else if (Task == "SWM"){
+  else if (Task == "SM"){
     factorlist <- list("Block", "Trial", "SpanSize", "StimulusLocationInOrder", "TouchedLocationsInOrder")
     numericlist <- list("Accuracy", "RT", "yourSpan")
   }
@@ -28,27 +28,27 @@ cog_datatype <- function(df, Task){
     factorlist <- list("Block", "Trial", "SpanSize", "ListLength", "StimulusLocationInOrder", "TouchedLocationsInOrder")
     numericlist <- list("Accuracy", "RT", "yourSpan")
   }
-  else if (Task == "ST"){
+  else if (Task == "SST"){
     factorlist <- list("Block", "Trial", "Condition", "Direction", "Response")
     numericlist <- list("Accuracy", "RT", "pgoACC", "pgoRT", "DelayIntervalStopTrials", "ThresholdStopTrials", "goACC", "goRT", "stopACC")
   }
   #Stroop
-  else if (Task == "SP"){
+  else if (Task == "Sp"){
     factorlist <- list("Block", "Trial", "Condition", "ColorWord", "Color", "Response")
     numericlist <- list("Accuracy", "RT", "ICACC", "ICRT", "NACC", "NRT")
   }
   #Antisaccade
-  else if (Task == "AS"){
+  else if (Task == "As"){
     factorlist <- list("Block", "Trial", "CueLocation", "ArrowDirection", "Response")
     numericlist <- list("Accuracy", "RT", "ACC", "MeanAC", "MeanRT")
   }
   #Color Trail Task
-  else if (Task == "CT"){
+  else if (Task == "CTT"){
     factorlist <- list("Block", "Condition", "responseNumber", "responseColor", "Response")
     numericlist <- list("RT", "nonSwitchACC", "nonSwitchRT", "switchACC", "switchRT", "BlockACC", "BlockRT", "SaAC", "SwitchAC", "SaRT", "SwitchRT")
   }
   #Figure Task
-  else if (Task == "FG"){
+  else if (Task == "Fg"){
     factorlist <- list("Block", "Trial", "Condition", "Task", "Stimulus", "SubjectResponse")
     numericlist <- list("Accuracy", "RT", "BlockRT", "BlockACC", "repACC", "repRT", "swiACC")
   }
