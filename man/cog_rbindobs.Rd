@@ -8,7 +8,7 @@ rbind one task all observers
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-cog_rbindobs(path, Regex_pattern)
+cog_rbindobs(path, Task)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -47,18 +47,8 @@ tylin
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (path, Regex_pattern)
-{
-    files <- list.files(path = path, pattern = Regex_pattern)
-    df <- files \%>\% map(~read_csv(file.path(path, file = .))) \%>\%
-        .[lapply(., colnames) != "Task unfinished!"] \%>\% reduce(rbind)
-    return(df)
-  }
+df <- cog_rbindobs("./all", "SRTCRT")
+you can also type RegrexPatern in Task par
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
