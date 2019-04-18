@@ -44,9 +44,10 @@ tylin
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-cog_tidy(path, pattern, "SRTCRT")
+cog_tidy(path, "SRTCRT")
 
-cog_tidy("./all", ".*SRT_CRT.*.csv", "SRTCRT")
+cog_tidy("./all", "SRTCRT")
+you can input regrex pattern in Task parameter
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

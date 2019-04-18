@@ -1,6 +1,6 @@
-cog_tidy <- function(datapath, pattern, Task){
+cog_tidy <- function(datapath, Task){
   #raw df
-  raw_df <- cog_rbindobs(datapath, pattern) %>%
+  raw_df <- cog_rbindobs(datapath, Task) %>%
     cog_datatype(., Task) %>%
     cog_mutate(., Task)
 
