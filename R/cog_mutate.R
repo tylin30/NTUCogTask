@@ -8,7 +8,17 @@ cog_mutate <- function (df, Task)
   }
 
   else if (Task == "MA" || Task == "MAO"){
-    mutate_string <- paste0("mutate(., ", Task, "_mrt = mean(RT[Block != 0 & Accuracy == 1]), ", Task, "_mac = mean(Accuracy[Block != 0]), ", Task, "_ca = yourSPAN) ")
+    mutate_string <- paste0("mutate(., ",
+                            Task, "_mrt = mean(RT[Block != 0 & Accuracy == 1]), ",
+                            Task, "_mac = mean(Accuracy[Block != 0]), ",
+                            Task, "_ca = yourSPAN) ")
+  }
+  else if (Task == "SM"){
+    mutate_string <- paste0("mutate(.,",
+                            Task, "_mrt = mean(RT[Block != 0 & Accuracy == 1]), ",
+                            Task, "_mac = mean(Accuracy[Block != 0]), ",
+                            Task, "_ca = yourSPAN) ")
+
   }
 
   tmpdf <- df %>%
