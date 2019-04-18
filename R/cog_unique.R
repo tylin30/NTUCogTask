@@ -12,17 +12,21 @@ cog_unique <- function(df, Task){
     )"
   }
   else if (Task == "DMS"){
-    summary_string <- "summarise(.,
-    delay0ACC = unique(delay0ACC),
-    delay0RT = unique(delay0RT),
-    delay5ACC = unique(delay5ACC),
-    delay5RT = unique(delay5RT),
-    delay10ACC = unique(delay10ACC),
-    delay10RT = unique(delay10RT)
-    )"
+    summary_string <- paste0("summarise(.,",
+    Task, "_0rt = unique(delay0RT), ",
+    Task, "_0ac = unique(delay0ACC), ",
+    Task, "_5rt = unique(delay5RT), ",
+    Task, "_0ac = unique(delay0ACC), ",
+    Task, "_10rt = unique(delay10RT), ",
+    Task, "_10ac = unique(delay10ACC))"
+    )
   }
   else if (Task == "MA" || Task == "MAO"){
-    summary_string <- paste0("summarise(.,", Task, "_mrt = unique(", Task, "_mrt), ", Task, "_mac = unique(", Task, "_mac, ), ", Task, "_ca = unique(", Task, "_ca))")
+    summary_string <- paste0("summarise(.,",
+                             Task, "_mrt = unique(", Task, "_mrt), ",
+                             Task, "_mac = unique(", Task, "_mac, ), ",
+                             Task, "_ca = unique(", Task, "_ca))"
+                             )
   }
 
   tmpdf <- df %>%
