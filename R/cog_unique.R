@@ -1,4 +1,5 @@
 cog_unique <- function(df, Task){
+  ## SRTCRT ----
   if (Task == "SRTCRT"){
     summary_string <- "summarise(.,
     SRT_mrt = unique(SRT_mrt),
@@ -11,6 +12,7 @@ cog_unique <- function(df, Task){
     CRT_vac = unique(CRT_vac)
     )"
   }
+  ## DMS ----
   else if (Task == "DMS"){
     summary_string <- paste0("summarise(.,",
     Task, "_0rt = unique(delay0RT), ",
@@ -21,6 +23,7 @@ cog_unique <- function(df, Task){
     Task, "_10ac = unique(delay10ACC))"
     )
   }
+  ## MA/MAO ----
   else if (Task == "MA" || Task == "MAO"){
     summary_string <- paste0("summarise(.,",
                              Task, "_mrt = unique(", Task, "_mrt), ",
@@ -28,6 +31,8 @@ cog_unique <- function(df, Task){
                              Task, "_ca = unique(", Task, "_ca))"
                              )
   }
+
+  ## SM ----
   else if (Task == "SM"){
     summary_string <- paste0("summarise(.,",
                              Task, "_mrt = unique(", Task, "_mrt), ",
@@ -35,6 +40,8 @@ cog_unique <- function(df, Task){
                              Task, "_ca = unique(", Task, "_ca))"
     )
   }
+
+  ## RMS/RMO ----
   else if (Task == "RMS" || Task  == "RMO"){
     summary_string <- paste0("summarise(.,",
                              Task, "_mrt = unique(", Task, "_mrt), ",
@@ -43,6 +50,7 @@ cog_unique <- function(df, Task){
     )
   }
 
+  ## RML ----
   else if (Task == "RML"){
     summary_string <- paste0("summarise(.,",
                              Task, "_mrt = unique(", Task, "_mrt), ",
@@ -50,6 +58,7 @@ cog_unique <- function(df, Task){
                              Task, "_ca = unique(", Task, "_ca))"
     )
   }
+  ## SST ----
   else if (Task == "SST"){
     summary_string <- paste0("summarise(.,",
                              Task, "_mrt = unique(", Task, "_mrt), ",
@@ -58,6 +67,7 @@ cog_unique <- function(df, Task){
                              Task, "_ac = unique(", Task, "_ac))"
     )
   }
+  ## Sp ----
   else if (Task == "Sp"){
     summary_string <- paste0("summarise(.,",
                              Task, "_ICrt = unique(ICRT), ",
@@ -68,13 +78,24 @@ cog_unique <- function(df, Task){
                              Task, "_ICNac = unique(", Task, "_ICac))"
     )
   }
-
+  ## As ----
   else if (Task == "As"){
     summary_string <- paste0("summarise(.,",
                              Task, "_mrt = unique(", Task, "_mrt), ",
                              Task, "_mac = unique(", Task, "_mac))"
     )
   }
+
+  ## CTT ----
+  else if (Task == "CTT"){
+    summary_string <- paste0("summarise(.,",
+                             Task, "_sart = unique(", Task, "_sart), ",
+                             Task, "_saac = unique(", Task, "_saac), ",
+                             Task, "_swrt = unique(", Task, "_swrt), ",
+                             Task, "_swac = unique(", Task, "_swac))"
+    )
+  }
+
 
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
