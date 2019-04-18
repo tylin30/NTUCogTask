@@ -22,7 +22,7 @@ cog_datatype <- function(df, Task){
   }
   else if (Task == "RMS" || Task == "RMO"){
     factorlist <- list("Block", "Trial", "SpanSize", "ListLength", "StimuliShown", "Lure", "CorrRespInOrder", "SubjectResponse")
-    numericlist <- list("Accuracy", "RT", "yourSpan")
+    numericlist <- list("Accuracy", "RT", "yourSPAN")
   }
   else if (Task == "RML"){
     factorlist <- list("Block", "Trial", "SpanSize", "ListLength", "StimulusLocationInOrder", "TouchedLocationsInOrder")

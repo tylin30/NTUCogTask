@@ -18,8 +18,14 @@ cog_mutate <- function (df, Task)
                             Task, "_mrt = mean(RT[Block != 0 & Accuracy == 1]), ",
                             Task, "_mac = mean(Accuracy[Block != 0]), ",
                             Task, "_ca = yourSPAN) ")
-
   }
+  else if (Task == "RMS" || Task == "RMO"){
+    mutate_string <- paste0("mutate(.,",
+                            Task, "_mrt = mean(RT[Block != 0 & Accuracy == 1]), ",
+                            Task, "_mac = mean(Accuracy[Block != 0]), ",
+                            Task, "_ca = yourSPAN) ")
+  }
+
 
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
