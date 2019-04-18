@@ -26,11 +26,18 @@ cog_mutate <- function (df, Task)
                             Task, "_ca = yourSPAN) ")
   }
 
-  else if (Task == "RML" ){
+  else if (Task == "RML"){
     mutate_string <- paste0("mutate(.,",
                             Task, "_mrt = mean(RT[Block != 0 & Accuracy == 1]), ",
                             Task, "_mac = mean(Accuracy[Block != 0]), ",
                             Task, "_ca = yourSPAN) ")
+  }
+  else if (Task == "SST"){
+    mutate_string <- paste0("mutate(.,",
+                            Task, "_mrt = goRT - pgoRT, ",
+                            Task, "_mac = goACC - pgoACC, ",
+                            Task, "_int = ThresholdStopTrials, ",
+                            Task, "_ac = stopACC)")
   }
 
 

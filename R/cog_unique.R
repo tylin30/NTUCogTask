@@ -24,21 +24,21 @@ cog_unique <- function(df, Task){
   else if (Task == "MA" || Task == "MAO"){
     summary_string <- paste0("summarise(.,",
                              Task, "_mrt = unique(", Task, "_mrt), ",
-                             Task, "_mac = unique(", Task, "_mac, ), ",
+                             Task, "_mac = unique(", Task, "_mac), ",
                              Task, "_ca = unique(", Task, "_ca))"
                              )
   }
   else if (Task == "SM"){
     summary_string <- paste0("summarise(.,",
                              Task, "_mrt = unique(", Task, "_mrt), ",
-                             Task, "_mac = unique(", Task, "_mac, ), ",
+                             Task, "_mac = unique(", Task, "_mac), ",
                              Task, "_ca = unique(", Task, "_ca))"
     )
   }
   else if (Task == "RMS" || Task  == "RMO"){
     summary_string <- paste0("summarise(.,",
                              Task, "_mrt = unique(", Task, "_mrt), ",
-                             Task, "_mac = unique(", Task, "_mac, ), ",
+                             Task, "_mac = unique(", Task, "_mac), ",
                              Task, "_ca = unique(", Task, "_ca))"
     )
   }
@@ -46,12 +46,18 @@ cog_unique <- function(df, Task){
   else if (Task == "RML"){
     summary_string <- paste0("summarise(.,",
                              Task, "_mrt = unique(", Task, "_mrt), ",
-                             Task, "_mac = unique(", Task, "_mac, ), ",
+                             Task, "_mac = unique(", Task, "_mac), ",
                              Task, "_ca = unique(", Task, "_ca))"
     )
   }
-
-
+  else if (Task == "SST"){
+    summary_string <- paste0("summarise(.,",
+                             Task, "_mrt = unique(", Task, "_mrt), ",
+                             Task, "_mac = unique(", Task, "_mac), ",
+                             Task, "_int = unique(", Task, "_int), ",
+                             Task, "_ac = unique(", Task, "_ac))"
+    )
+  }
 
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
