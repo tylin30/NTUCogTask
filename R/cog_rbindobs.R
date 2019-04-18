@@ -30,22 +30,22 @@ cog_rbindobs <- function(path, Task){
     Regex_pattern <- ".*Stop_Signal_Task.*.csv"
   }
   else if (Task == "Sp"){
-    Regex_pattern <- ".*Stroop*.csv"
+    Regex_pattern <- ".*Stroop.*.csv"
   }
   else if (Task == "As"){
-    Regex_pattern <- ".*Antisaccade_Arrow*.csv"
+    Regex_pattern <- ".*Antisaccade_Arrow.*.csv"
   }
   else if (Task == "CTT"){
-    Regex_pattern <- ".*Color_Trail_Test*.csv"
+    Regex_pattern <- ".*Color_Trail_Test.*.csv"
   }
   else if (Task == "Fg"){
-    Regex_pattern <- ".*Figure_Task*.csv"
+    Regex_pattern <- ".*Figure_Task.*.csv"
   }
   else if (Task == "HF"){
-    Regex_pattern <- ".*Hearts_and_Flowers*.csv"
+    Regex_pattern <- ".*Hearts_and_Flowers.*.csv"
   }
   else if (Task == "RS"){
-    Regex_pattern <- ".*Rotation_Span_Task*.csv"
+    Regex_pattern <- ".*Rotation_Span_Task.*.csv"
   }
   else{
     Regex_pattern <- Task
