@@ -40,7 +40,7 @@ cog_datatype <- function(df, Task){
   #Antisaccade
   else if (Task == "As"){
     factorlist <- list("Block", "Trial", "CueLocation", "ArrowDirection", "Response")
-    numericlist <- list("Accuracy", "RT", "ACC", "MeanAC", "MeanRT")
+    numericlist <- list("Accuracy", "RT", "MeanAC", "MeanRT")
   }
   #Color Trail Task
   else if (Task == "CTT"){

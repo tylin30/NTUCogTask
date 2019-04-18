@@ -47,6 +47,13 @@ cog_mutate <- function (df, Task)
                             )
   }
 
+  else if (Task == "As"){
+    mutate_string <- paste0("mutate(.,",
+                            Task, "_mrt = MeanRT, " ,
+                            Task, "_mac = MeanAC)"
+    )
+  }
+
 
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%

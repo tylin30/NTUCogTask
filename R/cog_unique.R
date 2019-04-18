@@ -69,6 +69,13 @@ cog_unique <- function(df, Task){
     )
   }
 
+  else if (Task == "As"){
+    summary_string <- paste0("summarise(.,",
+                             Task, "_mrt = unique(", Task, "_mrt), ",
+                             Task, "_mac = unique(", Task, "_mac))"
+    )
+  }
+
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
     eval(parse(text = summary_string), envir = .)
