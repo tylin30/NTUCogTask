@@ -21,7 +21,7 @@ cog_unique <- function(df, Task){
     delay10RT = unique(delay10RT)
     )"
   }
-  else if (Task == "MA" || Task == "MAS"){
+  else if (Task == "MA" || Task == "MAO"){
     summary_string <- paste0("summarise(.,", Task, "_mrt = unique(", Task, "_mrt), ", Task, "_mac = unique(", Task, "_mac, ), ", Task, "_ca = unique(", Task, "_ca))")
   }
 

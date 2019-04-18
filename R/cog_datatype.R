@@ -4,7 +4,7 @@ cog_datatype <- function(df, Task){
     factorlist <- list("Block", "Trial", "StimulusLocation", "ResponseLocation")
     numericlist <- list("Accuracy", "RT", "SRT", "CRT")
   }
-  else if (Task == "MA" || Task =="MAS"){
+  else if (Task == "MA" || Task =="MAO"){
     factorlist <- list("Block" ,"Trial", "SetSize", "Stimuli", "CorrLocInOrder", "TouchedLoc")
     numericlist <- list("Accuracy", "RT", "yourSPAN")
   }

@@ -7,7 +7,7 @@ cog_mutate <- function (df, Task)
     mutate_string <- "mutate(.)"
   }
 
-  else if (Task == "MA" || Task == "MAS"){
+  else if (Task == "MA" || Task == "MAO"){
     mutate_string <- paste0("mutate(., ", Task, "_mrt = mean(RT[Block != 0 & Accuracy == 1]), ", Task, "_mac = mean(Accuracy[Block != 0]), ", Task, "_ca = yourSPAN) ")
   }
 

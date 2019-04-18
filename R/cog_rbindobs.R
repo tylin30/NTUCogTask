@@ -5,7 +5,7 @@ cog_rbindobs <- function(path, Task){
   else if (Task == "MA"){
     Regex_pattern <- ".*Memory_of_Association_[^Object].*.csv"
   }
-  else if (Task == "MAS"){
+  else if (Task == "MAO"){
     Regex_pattern <- ".*Memory_of_Association_Object.*.csv"
   }
   else{
