@@ -40,6 +40,13 @@ cog_mutate <- function (df, Task)
                             Task, "_ac = stopACC)")
   }
 
+  else if (Task == "Sp"){
+    mutate_string <- paste0("mutate(.,",
+                            Task, "_ICNrt = ICRT - NRT, " ,
+                            Task, "_ICNac = ICACC - NACC)"
+                            )
+  }
+
 
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
