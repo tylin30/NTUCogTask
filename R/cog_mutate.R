@@ -84,6 +84,36 @@ cog_mutate <- function (df, Task)
     )
   }
 
+  ## HF ----
+  else if (Task == "HF"){
+    mutate_string <- paste0("mutate(.,",
+                            #pc = pure congruent
+                            Task, "_pcrt = mean(RT[Block != 0 & Accuracy == 1 & Condition == 1]), " ,
+                            Task, "_pcac = mean(Accuracy[Block != 0 & Condition == 1]), " ,
+                            Task, "_picrt = mean(RT[Block != 0 & Accuracy == 1 & Condition == 2]), " ,
+                            Task, "_picac = mean(Accuracy[Block != 0 & Condition == 2]), " ,
+                            Task, "_icrt = mean(RT[Block != 0 & Accuracy == 1 & Condition == 2] - RT[Block != 0 & Accuracy == 1 & Condition == 1]), " ,
+                            Task, "_icac = mean(Accuracy[Block != 0 & Condition == 2] - Accuracy[Block != 0 & Condition == 1]), " ,
+
+                            Task, "_Hgrt = GcosthRT, " ,
+                            Task, "_Hgac = GcosthAC, " ,
+                            Task, "_Fgrt = GcostfRT, " ,
+                            Task, "_Fgac = GcostfAC, " ,
+
+                            #Block -> 0:practice, 1:pure heart, 2:pure flower, 3:mix
+                            #Condition -> 1:pure heart 2:pure flower
+                            #             3:heart in mix block  4:flower in mix block
+
+                            Task, "_Hmrt = mean(RT[Block != 0 & Accuracy == 1 & (Condition %in% c(1,3) )]), " ,
+                            Task, "_Hmac = mean(Accuracy[Block != 0 & (Condition %in% c(1,3) )]), " ,
+                            Task, "_Fmrt = mean(RT[Block != 0 & Accuracy == 1 & (Condition %in% c(2,4) )]), " ,
+                            Task, "_Fmac = mean(Accuracy[Block != 0 & (Condition %in% c(2,4) )]), " ,
+
+                            Task, "_costrt = mean(RT[Block != 0 & Accuracy == 1 & (Condition %in% c(3,4) )] - Accuracy[Block != 0 & Accuracy == 1 & (Condition %in% c(1,2) )]), " ,
+                            Task, "_costac = mean(Accuracy[Block != 0 & (Condition %in% c(3,4) )] - Accuracy[Block != 0 & (Condition %in% c(1,2) )]))"
+    )
+  }
+
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
     eval(parse(text = mutate_string), envir = .)

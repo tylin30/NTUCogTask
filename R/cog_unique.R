@@ -108,6 +108,36 @@ cog_unique <- function(df, Task){
     )
   }
 
+  ## HF ----
+  else if (Task == "HF"){
+    summary_string <- paste0("summarise(.,",
+                             Task, "_pcrt = unique(", Task, "_pcrt), ",
+                             Task, "_pcac = unique(", Task, "_pcac), ",
+                             Task, "_picrt = unique(", Task, "_picrt), ",
+                             Task, "_picac = unique(", Task, "_picac), ",
+                             Task, "_icrt = unique(", Task, "_icrt), ",
+                             Task, "_icac = unique(", Task, "_icac), ",
+
+                             Task, "_Hgrt = unique(", Task, "_Hgrt), ",
+                             Task, "_Hgac = unique(", Task, "_Hgac), ",
+                             Task, "_Fgrt = unique(", Task, "_Fgrt), ",
+                             Task, "_Fgac = unique(", Task, "_Fgac), ",
+
+                             #Block -> 0:practice, 1:pure heart, 2:pure flower, 3:mix
+                             #Condition -> 1:pure heart 2:pure flower
+                             #             3:heart in mix block  4:flower in mix block
+                             Task, "_Hmrt = unique(", Task, "_Hmrt), ",
+                             Task, "_Hmac = unique(", Task, "_Hmac), ",
+                             Task, "_Fmrt = unique(", Task, "_Fmrt), ",
+                             Task, "_Fmac = unique(", Task, "_Fmac), ",
+
+                             Task, "_costrt = unique(", Task, "_costrt), ",
+                             Task, "_costac = unique(", Task, "_costac))"
+
+
+    )
+  }
+
 
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%

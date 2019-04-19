@@ -53,8 +53,8 @@ cog_datatype <- function(df, Task){
     numericlist <- list("BlockACC", "BlockRT", "repACC", "repRT", "swiACC", "swiRT", "GcostAC", "GcostRT", "LcostAC", "LcostRT", "Accuracy", "RT")
   }
   else if (Task == "HF"){
-    factorlist <- list("Block", "Trial", "Condition", "StimulusLocation", "SubjectTesponse")
-    numericlist <- list("Accuracy", "RT", "BlockACC", "BlockRT", "MixheartACC", "MixheartRT", "MixflowerACC", "MexflowerRT", "GcosthAC", "GcosthRT", "GcostfAC", "GcostfRT")
+    factorlist <- list("Block", "Trial", "Condition", "StimulusLocation", "SubjectResponse")
+    numericlist <- list("Accuracy", "RT", "BlockACC", "BlockRT", "MixheartACC", "MixheartRT", "MixflowerACC", "MixflowerRT", "GcosthAC", "GcosthRT", "GcostfAC", "GcostfRT", "GcostAC", "GcostRT")
   }
   else if (Task == "RS"){
     factorlist <- list("Trial", "SpanSize", "Condition", "Digit", "Direction", "DigitResponse", "ArrowShown", "ArrowCollection", "ArrowResponse")
