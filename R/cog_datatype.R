@@ -50,7 +50,7 @@ cog_datatype <- function(df, Task){
   #Figure Task
   else if (Task == "Fg"){
     factorlist <- list("Block", "Trial", "Condition", "Task", "Stimulus", "SubjectResponse")
-    numericlist <- list("Accuracy", "RT", "BlockRT", "BlockACC", "repACC", "repRT", "swiACC")
+    numericlist <- list("BlockACC", "BlockRT", "repACC", "repRT", "swiACC", "swiRT", "GcostAC", "GcostRT", "LcostAC", "LcostRT", "Accuracy", "RT")
   }
   else if (Task == "HF"){
     factorlist <- list("Block", "Trial", "Condition", "StimulusLocation", "SubjectTesponse")

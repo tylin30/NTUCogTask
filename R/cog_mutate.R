@@ -72,6 +72,18 @@ cog_mutate <- function (df, Task)
     )
   }
 
+  ## Fg ----
+  else if (Task == "Fg"){
+    mutate_string <- paste0("mutate(.,",
+                            Task, "_rprt = repRT, " ,
+                            Task, "_rpac = repACC, " ,
+                            Task, "_swrt = swiRT, " ,
+                            Task, "_swac = swiACC, " ,
+                            Task, "_cort = (swiRT - repRT), " ,
+                            Task, "_coac = (swiACC - repACC))"
+    )
+  }
+
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
     eval(parse(text = mutate_string), envir = .)

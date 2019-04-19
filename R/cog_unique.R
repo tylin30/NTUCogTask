@@ -96,6 +96,18 @@ cog_unique <- function(df, Task){
     )
   }
 
+  ## Fg ----
+  else if (Task == "Fg"){
+    summary_string <- paste0("summarise(.,",
+                             Task, "_rprt = unique(", Task, "_rprt), ",
+                             Task, "_rpac = unique(", Task, "_rpac), ",
+                             Task, "_swrt = unique(", Task, "_swrt), ",
+                             Task, "_swac = unique(", Task, "_swac), ",
+                             Task, "_cort = unique(", Task, "_cort), ",
+                             Task, "_coac = unique(", Task, "_coac))"
+    )
+  }
+
 
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
