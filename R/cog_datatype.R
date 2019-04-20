@@ -13,8 +13,8 @@ cog_datatype <- function(df, Task){
     numericlist <- list("Accuracy", "RT", "delay0ACC", "delay0RT", "delay5ACC", "delay5RT", "delay10ACC", "delay10RT")
   }
   else if (Task == "DR"){
-    factorlist <- list("Encode", "Encode1", "Encode2", "Encode3", "Encode4", "Test", "Test1", "Test2", "Test4", "Condition")
-    numericlist <- list("ACC", "RT", "e1t1ACC", "e1t1RT", "e1t4ACC", "e1t4RT", "e4t1ACC", "e4t1RT", "e4t4ACC", "e4t4RT", "MeanACC", "MeanRT")
+    factorlist <- list("Encode", "Encode1", "Encode2", "Encode3", "Encode4", "Test", "Test1", "Test2", "Test4", "Condition", "Response")
+    numericlist <- list("ACC", "RT", "e1t1ACC", "e1t1RT", "e1t4ACC", "e1t4RT", "e4t1ACC", "e4t1RT", "e4t4ACC", "e4t4RT")
   }
   else if (Task == "SM"){
     factorlist <- list("Block", "Trial", "SpanSize", "StimulusLocationsInOrder", "TouchedLocationsInOrder")

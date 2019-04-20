@@ -5,11 +5,6 @@ cog_mutate <- function (df, Task)
     mutate_string <- "mutate(., SRT_mrt = mean(RT[StimulusLocation == 5 & Block != 0 & Accuracy == 1]),SRT_vrt = var(RT[StimulusLocation == 5 & Block != 0 & Accuracy == 1]),CRT_mrt = mean(RT[StimulusLocation != 5 & Block != 0 & Accuracy == 1]),CRT_vrt = var(RT[StimulusLocation != 5 & Block != 0 & Accuracy == 1]),SRT_mac = mean(Accuracy[StimulusLocation == 5 & Block != 0]),SRT_vac = var(Accuracy[StimulusLocation == 5 & Block != 0]),CRT_mac = mean(Accuracy[StimulusLocation != 5 & Block != 0]),CRT_vac = var(Accuracy[StimulusLocation != 5 & Block != 0]))"
   }
 
-  ## DMS ----
-  else if (Task == "DMS"){
-    mutate_string <- "mutate(.)"
-  }
-
   ## MA/MAO ----
   else if (Task == "MA" || Task == "MAO"){
     mutate_string <- paste0("mutate(., ",
@@ -17,6 +12,31 @@ cog_mutate <- function (df, Task)
                             Task, "_mac = mean(Accuracy[Block != 0]), ",
                             Task, "_ca = yourSPAN) ")
   }
+
+  ## DMS ----
+  else if (Task == "DMS"){
+    mutate_string <- "mutate(.)"
+  }
+
+  ## DR ----
+  else if (Task == "DR"){
+    mutate_string <- paste0("mutate(.,",
+                            Task, "_11rt = e1t1RT, ",
+                            Task, "_11ac = e1t1ACC, ",
+                            Task, "_14rt = e1t4RT, ",
+                            Task, "_14ac = e1t4ACC, ",
+                            Task, "_41rt = e4t1RT, ",
+                            Task, "_41ac = e4t1ACC, ",
+                            Task, "_44rt = e4t4RT, ",
+                            Task, "_44ac = e4t4ACC, ",
+
+                            Task, "_mrt = mean(RT[Block != 0 & ACC == 1]), ",
+                            Task, "_mac = mean(ACC[Block != 0]), ",
+                            Task, "_Coc = 4 * (e4t1ACC - (1 - mean(ACC[Block != 0 & Condition == 'Mismatch']))), ",
+                            Task, "_Pac = 4 * (e4t4ACC - (1 - mean(ACC[Block != 0 & Condition == 'Mismatch'])))) "
+                            )
+  }
+
   ## SM ----
   else if (Task == "SM"){
     mutate_string <- paste0("mutate(.,",

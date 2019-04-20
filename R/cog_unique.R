@@ -12,17 +12,7 @@ cog_unique <- function(df, Task){
     CRT_vac = unique(CRT_vac)
     )"
   }
-  ## DMS ----
-  else if (Task == "DMS"){
-    summary_string <- paste0("summarise(.,",
-    Task, "_0rt = unique(delay0RT), ",
-    Task, "_0ac = unique(delay0ACC), ",
-    Task, "_5rt = unique(delay5RT), ",
-    Task, "_0ac = unique(delay0ACC), ",
-    Task, "_10rt = unique(delay10RT), ",
-    Task, "_10ac = unique(delay10ACC))"
-    )
-  }
+
   ## MA/MAO ----
   else if (Task == "MA" || Task == "MAO"){
     summary_string <- paste0("summarise(.,",
@@ -30,6 +20,39 @@ cog_unique <- function(df, Task){
                              Task, "_mac = unique(", Task, "_mac), ",
                              Task, "_ca = unique(", Task, "_ca))"
                              )
+  }
+
+  ## DMS ----
+  else if (Task == "DMS"){
+    summary_string <- paste0("summarise(.,",
+                             Task, "_0rt = unique(delay0RT), ",
+                             Task, "_0ac = unique(delay0ACC), ",
+                             Task, "_5rt = unique(delay5RT), ",
+                             Task, "_0ac = unique(delay0ACC), ",
+                             Task, "_10rt = unique(delay10RT), ",
+                             Task, "_10ac = unique(delay10ACC))"
+    )
+  }
+
+  ## DR ----
+  else if (Task == "DR"){
+    summary_string <- paste0("summarise(.,",
+                             Task, "_11rt = unique(", Task, "_11rt), ",
+                             Task, "_11ac = unique(", Task, "_11ac), ",
+                             Task, "_14rt = unique(", Task, "_14rt), ",
+                             Task, "_14ac = unique(", Task, "_14ac), ",
+                             Task, "_41rt = unique(", Task, "_41rt), ",
+                             Task, "_41ac = unique(", Task, "_41ac), ",
+                             Task, "_44rt = unique(", Task, "_44rt), ",
+                             Task, "_44ac = unique(", Task, "_44ac), ",
+
+                             Task, "_mrt = unique(", Task, "_mrt), ",
+                             Task, "_mac = unique(", Task, "_mac), ",
+
+                             Task, "_Coc = unique(", Task, "_Coc), ",
+                             Task, "_Pac = unique(", Task, "_Pac)) "
+
+    )
   }
 
   ## SM ----
