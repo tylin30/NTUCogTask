@@ -114,6 +114,15 @@ cog_mutate <- function (df, Task)
     )
   }
 
+  ## RS ----
+  else if (Task == "RS"){
+    mutate_string <- paste0("mutate(.,",
+                            Task, "_ca = yourSPAN, " ,
+                            #this task no Trial
+                            Task, "_armrt = mean(ArrowRT[Trial != 0 & OverallACC == 1 & Condition == 'Arrow']))"
+    )
+  }
+
   tmpdf <- df %>%
     group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
     eval(parse(text = mutate_string), envir = .)

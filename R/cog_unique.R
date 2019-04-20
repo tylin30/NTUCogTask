@@ -134,7 +134,14 @@ cog_unique <- function(df, Task){
                              Task, "_costrt = unique(", Task, "_costrt), ",
                              Task, "_costac = unique(", Task, "_costac))"
 
+    )
+  }
 
+  ## RS ----
+  else if (Task == "RS"){
+    summary_string <- paste0("summarise(.,",
+                             Task, "_ca = unique(", Task, "_ca), ",
+                             Task, "_armrt = unique(", Task, "_armrt)"
     )
   }
 
