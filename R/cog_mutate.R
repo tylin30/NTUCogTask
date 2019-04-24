@@ -32,8 +32,8 @@ cog_mutate <- function (df, Task)
 
                             Task, "_mrt = mean(RT[Block != 0 & ACC == 1]), ",
                             Task, "_mac = mean(ACC[Block != 0]), ",
-                            Task, "_Coc = 4 * (e4t1ACC - (1 - mean(ACC[Block != 0 & Condition == 'Mismatch']))), ",
-                            Task, "_Pac = 4 * (e4t4ACC - (1 - mean(ACC[Block != 0 & Condition == 'Mismatch'])))) "
+                            Task, "_Coc = 4 * (e4t1ACC/100 - (1 - mean(ACC[Block != 0 & Condition == 'Mismatch']))), ",
+                            Task, "_Pac = 4 * (e4t4ACC/100 - (1 - mean(ACC[Block != 0 & Condition == 'Mismatch'])))) "
                             )
   }
 
