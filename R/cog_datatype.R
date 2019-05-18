@@ -75,7 +75,7 @@ cog_datatype <- function(df, Task){
 
   #input factor list
   for (i in factorlist){
-    df[[i]] <- factor(df[[i]])
+    df[[i]] <- factor(tolower(df[[i]]))
   }
 
   #input numeric list
