@@ -64,6 +64,7 @@ cog_unique <- function(df, Task){
     )
   }
 
+
   ## RMS/RMO ----
   else if (Task == "RMS" || Task  == "RMO"){
     summary_string <- paste0("summarise(.,",
@@ -169,9 +170,16 @@ cog_unique <- function(df, Task){
   }
 
 
-  tmpdf <- df %>%
-    group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
-    eval(parse(text = summary_string), envir = .)
+  if (Task != "SST"){
+    tmpdf <- df %>%
+      group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
+      eval(parse(text = summary_string), envir = .)
+  }else{
+    tmpdf <- df %>%
+      group_by(Subject, Gender, Age, Education, Hand, Seed) %>%
+      filter(., Block != "p" & Block != 0) %>%
+      eval(parse(text = summary_string), envir = .)
+  }
 
   return(tmpdf)
 }
