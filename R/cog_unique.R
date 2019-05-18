@@ -165,7 +165,7 @@ cog_unique <- function(df, Task){
   else if (Task == "RS"){
     summary_string <- paste0("summarise(.,",
                              Task, "_ca = unique(", Task, "_ca), ",
-                             Task, "_armrt = unique(", Task, "_armrt)"
+                             Task, "_armrt = unique(", Task, "_armrt))"
     )
   }
 
