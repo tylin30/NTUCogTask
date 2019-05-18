@@ -66,7 +66,7 @@ cog_datatype <- function(df, Task){
   #common data datatype
 
   df <- transform(df,
-                  Subject = as.factor(Subject),
+                  Subject = as.factor(tolower(Subject)),
                   Gender = as.factor(Gender),
                   Age = as.numeric(Age),
                   Education = as.factor(Education),
@@ -75,7 +75,7 @@ cog_datatype <- function(df, Task){
 
   #input factor list
   for (i in factorlist){
-    df[[i]] <- factor(tolower(df[[i]]))
+    df[[i]] <- factor(df[[i]])
   }
 
   #input numeric list
