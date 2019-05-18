@@ -1,7 +1,11 @@
 cog_subrename <- function(df) {
-  for (i in 1:nrow(df)){
-    if (startsWith(as.character(df$Subject[i]), "ncku")){
-      df$Subject[i] <- substr(df$Subject[i], 1, 7)
+  sublevels <- levels(df$Subject)
+  for (i in 1:length(sublevels)){
+    if (grepl("^ncku\\d*[a-zA-Z]", levels(df$Subject)[i], ignore.case = TRUE)){
+
+      levels(df$Subject)[i] <- substr(sublevels[i], 1, nchar(sublevels[i])-1)
+
     }
   }
+  return(df)
 }
