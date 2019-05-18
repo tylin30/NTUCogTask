@@ -42,6 +42,7 @@ cog_joinall(x)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
+all_df <- cog_joinall()
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
