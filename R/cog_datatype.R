@@ -64,23 +64,14 @@ cog_datatype <- function(df, Task){
 
 
   #common data datatype
-  if (Task != "Sp"){
-    df <- transform(df,
-                    Subject = as.factor(Subject),
-                    Gender = as.factor(Gender),
-                    Age = as.numeric(Age),
-                    Education = as.factor(Education),
-                    Hand = as.factor(Hand),
-                    Seed = as.factor(Seed))
-  }else{
-    df <- transform(df,
-                    Subject = as.factor(Subject),
-                    Gender = as.factor(Gender),
-                    Age = as.numeric(Age),
-                    Education = as.factor(Education),
-                    Hand = as.factor(Hand))
-  }
 
+  df <- transform(df,
+                  Subject = as.factor(Subject),
+                  Gender = as.factor(Gender),
+                  Age = as.numeric(Age),
+                  Education = as.factor(Education),
+                  Hand = as.factor(Hand),
+                  Seed = as.factor(Seed))
 
   #input factor list
   for (i in factorlist){
