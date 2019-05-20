@@ -28,6 +28,7 @@ cog_unique <- function(df, Task){
                              Task, "_0rt = unique(delay0RT), ",
                              Task, "_0ac = unique(delay0ACC), ",
                              Task, "_5rt = unique(delay5RT), ",
+                             Task, "_5ac = unique(delay5ACC), ",
                              Task, "_0ac = unique(delay0ACC), ",
                              Task, "_10rt = unique(delay10RT), ",
                              Task, "_10ac = unique(delay10ACC))"
