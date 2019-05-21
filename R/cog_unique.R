@@ -50,8 +50,8 @@ cog_unique <- function(df, Task){
                              Task, "_mrt = unique(", Task, "_mrt), ",
                              Task, "_mac = unique(", Task, "_mac), ",
 
-                             Task, "_Coc = unique(", Task, "_Coc), ",
-                             Task, "_Pac = unique(", Task, "_Pac)) "
+                             Task, "_Coca = unique(", Task, "_Coca), ",
+                             Task, "_Paca = unique(", Task, "_Paca)) "
 
     )
   }
