@@ -119,6 +119,8 @@ cog_mutate <- function (df, Task)
                             Task, "_Hgac = GcosthAC, " ,
                             Task, "_Fgrt = GcostfRT, " ,
                             Task, "_Fgac = GcostfAC, " ,
+                            Task, "_Gcostrt = GcostRT, " ,
+                            Task, "_Gcostac = GcostAC, " ,
 
                             #Block -> 0:practice, 1:pure heart, 2:pure flower, 3:mix
                             #Condition -> 1:pure heart 2:pure flower

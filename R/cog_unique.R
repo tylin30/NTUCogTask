@@ -147,6 +147,8 @@ cog_unique <- function(df, Task){
                              Task, "_Hgac = unique(", Task, "_Hgac), ",
                              Task, "_Fgrt = unique(", Task, "_Fgrt), ",
                              Task, "_Fgac = unique(", Task, "_Fgac), ",
+                             Task, "_Gcostrt = unique(", Task, "_Gcostrt), ",
+                             Task, "_Gcostac = unique(", Task, "_Gcostac), ",
 
                              #Block -> 0:practice, 1:pure heart, 2:pure flower, 3:mix
                              #Condition -> 1:pure heart 2:pure flower
