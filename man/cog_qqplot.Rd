@@ -42,10 +42,10 @@ cog_qqplot(x)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-cog_qqplt(selected_rt, "RT")
+cog_qqplot(selected_rt, "RT")
 
 ## The function is currently defined as
-function (x) 
+function (x)
 {
   }
 }
