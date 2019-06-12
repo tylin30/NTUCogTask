@@ -87,10 +87,12 @@ cog_mutate <- function (df, Task)
     mutate_string <- paste0("mutate(.,",
                             Task, "_sart = SaRT, " ,
                             Task, "_saac = SaAC, " ,
-                            Task, "_swrt = SwitchRT, " ,
+                            Task, "_swrt = switchRT - nonSwitchRT, " ,
                             Task, "_swac = SwitchAC)"
     )
   }
+
+  #"_swrt = switchRT - nonSwitchRT, " due to app error
 
   ## Fg ----
   else if (Task == "Fg"){
