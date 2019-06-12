@@ -99,8 +99,8 @@ cog_unique <- function(df, Task){
                              Task, "_ICac = unique(ICACC), ",
                              Task, "_Nrt = unique(NRT), ",
                              Task, "_Nac = unique(NACC), ",
-                             Task, "_ICNrt = unique(", Task, "_ICrt), ",
-                             Task, "_ICNac = unique(", Task, "_ICac))"
+                             Task, "_ICNrt = unique(", Task, "_ICNrt), ",
+                             Task, "_ICNac = unique(", Task, "_ICNac))"
     )
   }
   ## As ----
