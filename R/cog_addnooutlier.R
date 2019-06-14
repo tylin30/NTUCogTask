@@ -4,10 +4,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
     df <- df %>%
       mutate(Condition = ifelse(StimulusLocation == 5, "SRT", "CRT")) %>%
       group_by(Subject, Condition) %>%
-      filter(Block != 0) %>%
+      # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
-        RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
-          RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
+        RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
         NA, RT
       )
       )
@@ -17,10 +17,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   if(Task == "DMS"){
     df <- df %>%
       group_by(Subject, Delay) %>%
-      filter(Block != 0) %>%
+      # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
-        RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
-          RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
+        RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
         NA, RT
       )
       )
@@ -29,10 +29,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   if(Task == "DR"){
     df <- df %>%
       group_by(Subject, Encode, Test) %>%
-      filter(Block != 0) %>%
+      # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
-        RT >= mean(RT[ACC == 1]) + range*sd(RT[ACC == 1]) |
-          RT <= mean(RT[ACC == 1]) - range*sd(RT[ACC == 1]),
+        RT >= mean(RT[Block != 0 & ACC == 1]) + range*sd(RT[Block != 0 & ACC == 1]) |
+          RT <= mean(RT[Block != 0 & ACC == 1]) - range*sd(RT[Block != 0 & ACC == 1]),
         NA, RT
       )
       )
@@ -41,10 +41,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   if(Task == "SST"){
     df <- df %>%
       group_by(Subject) %>%
-      filter(Block != 0) %>%
+      # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
-        RT >= mean(RT[Accuracy == 1], na.rm = TRUE) + range*sd(RT[Accuracy == 1], na.rm = TRUE) |
-          RT <= mean(RT[Accuracy == 1], na.rm = TRUE) - range*sd(RT[Accuracy == 1], na.rm = TRUE),
+        RT >= mean(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) + range*sd(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) |
+          RT <= mean(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) - range*sd(RT[Block != 0 & Accuracy == 1], na.rm = TRUE),
         NA, RT
       )
       )
@@ -53,10 +53,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   if(Task == "As"){
     df <- df %>%
       group_by(Subject) %>%
-      filter(Block != 0) %>%
+      # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
-        RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
-          RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
+        RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
         NA, RT
       )
       )
@@ -65,10 +65,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   if(Task == "Fg"){
     df <- df %>%
       group_by(Subject, Block) %>%
-      filter(Block != 0) %>%
+      # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
-        RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
-          RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
+        RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
         NA, RT
       )
       )
@@ -77,10 +77,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   if(Task == "HF"){
     df <- df %>%
       group_by(Subject, Block) %>%
-      filter(Block != 0) %>%
+      # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
-        RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
-          RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
+        RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
         NA, RT
       )
       )
@@ -89,10 +89,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   if(Task == "Sp"){
     df <- df %>%
       group_by(Subject, Condition) %>%
-      filter(Block != 0) %>%
+      # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
-        RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
-          RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
+        RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
         NA, RT
       )
       )
