@@ -73,6 +73,7 @@ cog_mutate <- function (df, Task)
     mutate_string <- paste0(mutate_string, "%>%",
                             "mutate(.,",
                             Task, "_mrt = goRT - pgoRT, ",
+                            Task, "_mrt_ro = goRT_ro - pgoRT, ",
                             Task, "_mac = goACC - pgoACC, ",
                             Task, "_int = ThresholdStopTrials, ",
                             Task, "_ac = stopACC)")
