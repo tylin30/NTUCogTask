@@ -2,6 +2,7 @@ cog_tidy <- function(datapath, Task){
   #raw df
   raw_df <- cog_rbindobs(datapath, Task) %>%
     cog_datatype(., Task) %>%
+    cog_addnooutlier(., Task) %>%
     cog_mutate(., Task)
 
   #unique df
