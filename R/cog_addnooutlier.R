@@ -1,7 +1,7 @@
 #new col, outlier = NaN
 cog_addnooutlier <- function(df, Task, range = 2.5){
   if (Task == "SRTCRT"){
-    tmpdf <- df %>%
+    df <- df %>%
       mutate(Condition = ifelse(StimulusLocation == 5, "SRT", "CRT")) %>%
       group_by(Subject, Condition) %>%
       filter(Block != 0) %>%
@@ -11,11 +11,11 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
-    return(tmpdf)
+
   }
 
   if(Task == "DMS"){
-    tmpdf <- df %>%
+    df <- df %>%
       group_by(Subject, Delay) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -24,11 +24,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
-    return(tmpdf)
   }
 
   if(Task == "DR"){
-    tmpdf <- df %>%
+    df <- df %>%
       group_by(Subject, Encode, Test) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -37,11 +36,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
-    return(tmpdf)
   }
 
   if(Task == "SST"){
-    tmpdf <- df %>%
+    df <- df %>%
       group_by(Subject) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -50,11 +48,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
-    return(tmpdf)
   }
 
   if(Task == "As"){
-    tmpdf <- df %>%
+    df <- df %>%
       group_by(Subject) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -63,11 +60,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
-    return(tmpdf)
   }
 
   if(Task == "Fg"){
-    tmpdf <- df %>%
+    df <- df %>%
       group_by(Subject, Block) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -76,11 +72,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
-    return(tmpdf)
   }
 
   if(Task == "HF"){
-    tmpdf <- df %>%
+    df <- df %>%
       group_by(Subject, Block) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -89,11 +84,10 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
-    return(tmpdf)
   }
 
   if(Task == "Sp"){
-    tmpdf <- df %>%
+    df <- df %>%
       group_by(Subject, Condition) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -102,8 +96,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
-    return(tmpdf)
   }
 
-  return(tmpdf)
+  return(df)
 }
