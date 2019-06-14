@@ -83,8 +83,8 @@ cog_mutate <- function (df, Task)
     mutate_string <- paste0("mutate(.,",
                             "ICRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 'IC'], na.rm = TRUE),",
                             "NRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 'N'], na.rm = TRUE),",
-                            Task, "ICNrt_ro = ICRT_ro - NRT_ro,",
                             Task, "_ICNrt = ICRT - NRT, " ,
+                            Task, "_ICNrt_ro = ICRT_ro - NRT_ro,",
                             Task, "_ICNac = ICACC - NACC)"
     )
   }
