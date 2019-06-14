@@ -1,4 +1,4 @@
-#new col, outlier = NaN
+#new col, outlier = NA
 cog_addnooutlier <- function(df, Task, range = 2.5){
   if (Task == "SRTCRT"){
     df <- df %>%
@@ -8,7 +8,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
           RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
-        NaN, RT
+        NA, RT
       )
       )
 
@@ -21,7 +21,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
           RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
-        NaN, RT
+        NA, RT
       )
       )
   }
@@ -33,7 +33,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       mutate(RT_ro = ifelse(
         RT >= mean(RT[ACC == 1]) + range*sd(RT[ACC == 1]) |
           RT <= mean(RT[ACC == 1]) - range*sd(RT[ACC == 1]),
-        NaN, RT
+        NA, RT
       )
       )
   }
@@ -45,7 +45,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Accuracy == 1], na.rm = TRUE) + range*sd(RT[Accuracy == 1], na.rm = TRUE) |
           RT <= mean(RT[Accuracy == 1], na.rm = TRUE) - range*sd(RT[Accuracy == 1], na.rm = TRUE),
-        NaN, RT
+        NA, RT
       )
       )
   }
@@ -57,7 +57,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
           RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
-        NaN, RT
+        NA, RT
       )
       )
   }
@@ -69,7 +69,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
           RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
-        NaN, RT
+        NA, RT
       )
       )
   }
@@ -81,7 +81,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
           RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
-        NaN, RT
+        NA, RT
       )
       )
   }
@@ -93,7 +93,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Accuracy == 1]) + range*sd(RT[Accuracy == 1]) |
           RT <= mean(RT[Accuracy == 1]) - range*sd(RT[Accuracy == 1]),
-        NaN, RT
+        NA, RT
       )
       )
   }
