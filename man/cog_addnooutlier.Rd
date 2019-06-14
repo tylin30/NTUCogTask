@@ -7,7 +7,7 @@ cog_addnooutlier
 \description{
 add new col no outlier RT.
 
-outlier will label to NaN
+outlier will be labeledl as NA
 }
 \usage{
 cog_addnooutlier(x)
@@ -49,7 +49,7 @@ tylin
 sd <- cog_addnooutlier(sst_df, "SST")
 
 ## The function is currently defined as
-function (x) 
+function (x)
 {
   }
 }
