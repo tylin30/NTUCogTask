@@ -1,7 +1,7 @@
 #new col, outlier = NaN
-cog_addnooutlier <- function(df, Task, range = 2.5){
+cog_addnooutlier_test <- function(df, Task, range = 2.5){
   if (Task == "SRTCRT"){
-    df %>%
+    tmpdf <- df %>%
       mutate(Condition = ifelse(StimulusLocation == 5, "SRT", "CRT")) %>%
       group_by(Subject, Condition) %>%
       filter(Block != 0) %>%
@@ -14,7 +14,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   }
 
   if(Task == "DMS"){
-    df %>%
+    tmpdf <- df %>%
       group_by(Subject, Delay) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -26,7 +26,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   }
 
   if(Task == "DR"){
-    df %>%
+    tmpdf <- df %>%
       group_by(Subject, Encode, Test) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -38,7 +38,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   }
 
   if(Task == "SST"){
-    df %>%
+    tmpdf <- df %>%
       group_by(Subject) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -50,7 +50,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   }
 
   if(Task == "As"){
-    df %>%
+    tmpdf <- df %>%
       group_by(Subject) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -62,7 +62,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   }
 
   if(Task == "Fg"){
-    df %>%
+    tmpdf <- df %>%
       group_by(Subject, Block) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -74,7 +74,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   }
 
   if(Task == "HF"){
-    df %>%
+    tmpdf <- df %>%
       group_by(Subject, Block) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -86,7 +86,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
   }
 
   if(Task == "Sp"){
-    df %>%
+    tmpdf <- df %>%
       group_by(Subject, Condition) %>%
       filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
@@ -97,6 +97,5 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       )
   }
 
-  return(df)
-
+  return(tmpdf)
 }
