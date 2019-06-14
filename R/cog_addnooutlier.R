@@ -1,5 +1,5 @@
 #new col, outlier = NaN
-cog_addnooutlier_test <- function(df, Task, range = 2.5){
+cog_addnooutlier <- function(df, Task, range = 2.5){
   if (Task == "SRTCRT"){
     tmpdf <- df %>%
       mutate(Condition = ifelse(StimulusLocation == 5, "SRT", "CRT")) %>%
