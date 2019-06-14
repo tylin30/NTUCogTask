@@ -11,6 +11,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
+    return(tmpdf)
   }
 
   if(Task == "DMS"){
@@ -23,6 +24,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
+    return(tmpdf)
   }
 
   if(Task == "DR"){
@@ -35,6 +37,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
+    return(tmpdf)
   }
 
   if(Task == "SST"){
@@ -47,6 +50,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
+    return(tmpdf)
   }
 
   if(Task == "As"){
@@ -59,6 +63,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
+    return(tmpdf)
   }
 
   if(Task == "Fg"){
@@ -71,6 +76,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
+    return(tmpdf)
   }
 
   if(Task == "HF"){
@@ -83,6 +89,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
+    return(tmpdf)
   }
 
   if(Task == "Sp"){
@@ -95,6 +102,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
         NaN, RT
       )
       )
+    return(tmpdf)
   }
 
   return(tmpdf)
