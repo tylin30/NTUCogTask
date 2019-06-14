@@ -5,7 +5,9 @@
 cog_addnooutlier
 }
 \description{
-add new col no outlier RT
+add new col no outlier RT.
+
+outlier will label to NaN
 }
 \usage{
 cog_addnooutlier(x)
