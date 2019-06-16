@@ -75,7 +75,6 @@ cog_mutate <- function (df, Task)
                             Task, "_mrt = goRT - pgoRT, ",
                             Task, "_mrt_ro = goRT_ro - pgoRT, ",
                             Task, "_mac = goACC - pgoACC, ",
-                            Task, "_mac_ = goACC - pgoACC, ",
                             Task, "_int = ThresholdStopTrials, ",
                             Task, "_stopac = stopACC, ",
                             Task, "_stopac_no05 = mean(Accuracy[Block != 0 & Condition == 'stop' & Accuracy != 0.5], na.rm = TRUE) * 100",
