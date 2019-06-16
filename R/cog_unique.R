@@ -90,7 +90,7 @@ cog_unique <- function(df, Task){
     )
   }
   ## SST ----
-  else if (Task == "SST"){
+  else if(Task == "SST"){
     summary_string <- paste0("summarise(.,",
                              Task, "_pgoRT = unique(pgoRT), ",
                              Task, "_goRT = unique(goRT), ",
@@ -99,9 +99,16 @@ cog_unique <- function(df, Task){
                              Task, "_mrt_ro = unique(", Task, "_mrt_ro), ",
                              Task, "_mac = unique(", Task, "_mac), ",
                              Task, "_int = unique(", Task, "_int), ",
-                             Task, "_ac = unique(", Task, "_ac))"
+                             Task, "_stopac = unique(", Task, "_stopac), ",
+                             Task, "_stopac_no05 = unique(", Task, "_stopac_no05), " ,
+                             Task, "_last30 = unique(", Task, "_last30), " ,
+                             Task, "_int_penalized = unique(", Task, "_int_penalized), " ,
+                             Task, "_int_penalized_no05 = unique(", Task, "_int_penalized_no05), " ,
+                             Task, "_index = unique(", Task, "_index), " ,
+                             Task, "_index_no05 = unique(", Task, "_index_no05) " ,
+                             ")"
     )
-  }
+  }}
   ## Sp ----
   else if (Task == "Sp"){
     summary_string <- paste0("summarise(.,",
