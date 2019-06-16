@@ -102,8 +102,8 @@ cog_unique <- function(df, Task){
                              Task, "_stopac = unique(", Task, "_stopac), ",
                              Task, "_stopac_no05 = unique(", Task, "_stopac_no05), " ,
                              Task, "_last30rt = unique(", Task, "_last30rt), " ,
-                             Task, "_int_penalized = unique(", Task, "_int_penalized), " ,
-                             Task, "_int_penalized_no05 = unique(", Task, "_int_penalized_no05), " ,
+                             Task, "_int_accadjust = unique(", Task, "_int_accadjust), " ,
+                             Task, "_int_accadjust_no05 = unique(", Task, "_int_accadjust_no05), " ,
                              Task, "_index = unique(", Task, "_index), " ,
                              Task, "_index_no05 = unique(", Task, "_index_no05) " ,
                              ")"
