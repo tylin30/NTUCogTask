@@ -65,7 +65,7 @@ cog_mutate <- function (df, Task)
                             Task, "_ca = yourSPAN) ")
   }
   ## SST ----
-  if (Task == "SST"){
+  else if (Task == "SST"){
     mutate_string <- paste0("mutate(.,",
                             "goRT_ro = mean(RT_ro[Block != 0 & Block != 'p' & Accuracy == 1 & Condition == 'go'], na.rm = TRUE))"
     )
