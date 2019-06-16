@@ -108,7 +108,7 @@ cog_unique <- function(df, Task){
                              Task, "_index_no05 = unique(", Task, "_index_no05) " ,
                              ")"
     )
-  }}
+  }
   ## Sp ----
   else if (Task == "Sp"){
     summary_string <- paste0("summarise(.,",
