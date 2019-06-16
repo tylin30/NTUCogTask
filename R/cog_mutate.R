@@ -88,8 +88,8 @@ cog_mutate <- function (df, Task)
                             Task, "_last30rt = mean(RT_ro[Block == 1 & Accuracy == 1 & Condition == 'go' & as.numeric(Trial) >= last30_trial], na.rm = TRUE),",
                             Task, "_int_accadjust = (SST_int/(SST_stopac/0.5))*100, ",
                             Task, "_int_accadjust_no05 = (SST_int/(SST_stopac_no05/0.5))*100, ",
-                            Task, "_index =", Task, "_last30rt", "/", Task, "_int_penalized,",
-                            Task, "_index_no05 =", Task, "_last30rt", "/", Task, "_int_penalized_no05,",
+                            Task, "_index =", Task, "_last30rt", "/", Task, "_int_accadjust,",
+                            Task, "_index_no05 =", Task, "_last30rt", "/", Task, "_int_accadjust_no05,",
                             ")"
     )
   }
