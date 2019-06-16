@@ -40,7 +40,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
 
   if(Task == "SST"){
     df <- df %>%
-      group_by(Subject) %>%
+      group_by(Subject, Block) %>%
       # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) + range*sd(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) |
