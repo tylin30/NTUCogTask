@@ -121,7 +121,7 @@ cog_mutate <- function (df, Task)
                             # Task, "_saac = SaAC, " ,
                             # Task, "_swrt = switchRT - nonSwitchRT, " ,
                             Task, "_nonswrt = nonSwitchRT, ",
-                            Task, "_nonswac = nonSwitchACC, "
+                            Task, "_nonswac = nonSwitchACC, ",
                             Task, "_swrt = switchRT, " ,
                             # Task, "_swac = SwitchAC)"
                             Task, "_swac = switchACC)"
@@ -133,27 +133,46 @@ cog_mutate <- function (df, Task)
   ## Fg ----
   else if (Task == "Fg"){
     mutate_string <- paste0("mutate(.,",
-                            Task, "_rprt = repRT, " ,
-                            Task, "_rprt_ro = mean(RT_ro[Block != 0 & Condition == 3 & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_rpac = repACC, " ,
-                            Task, "_swrt = swiRT, " ,
-                            Task, "_swrt_ro = mean(RT_ro[Block != 0 & Condition == 4 & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_swac = swiACC, " ,
-                            Task, "_cort = (swiRT - repRT), " ,
-                            Task, "_cort_ro = mean(RT_ro[Block != 0 & Condition == 4 & Accuracy == 1], na.rm = TRUE) - mean(RT_ro[Block != 0 & Condition == 3 & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_coac = (swiACC - repACC))")
+                            Task, "_shapert_ro = mean(RT_ro[Block == 1 & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_shapeac = mean(BlockACC[Block == 1], na.rm = TRUE), " ,
 
-    mutate_string <- paste0(mutate_string, "%>%",
-                            "group_by(Subject, Block)", "%>%",
-                            "mutate(.,",
-                            "BlockRT_ro = mean(RT_ro[Accuracy == 1], na.rm = TRUE))")
+                            Task, "_colorrt_ro = mean(RT_ro[Block == 2 & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_colorac = mean(BlockACC[Block == 2], na.rm = TRUE), " ,
 
-    mutate_string <- paste0(mutate_string, "%>%",
-                            "ungroup()", "%>%",
-                            "group_by(Subject)", "%>%",
-                            "mutate(.,",
-                            "GcostRT_ro = Fg_rprt_ro - (mean(RT_ro[Block == 1 & Accuracy == 1], na.rm = TRUE) + mean(RT_ro[Block == 2 & Accuracy == 1], na.rm = TRUE))/2,",
-                            "LcostRT_ro = Fg_swrt_ro - Fg_rprt_ro)")
+                            Task, "_rep_shapert_ro = mean(RT_ro[Condition == 3 & Task == 'A' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_rep_shapeac = mean(Accuracy[Condition == 3 & Task == 'A'], na.rm = TRUE), " ,
+
+                            Task, "_rep_shapert_ro = mean(RT_ro[Condition == 3 & Task == 'B' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_rep_shapeac = mean(Accuracy[Condition == 3 & Task == 'B'], na.rm = TRUE), " ,
+
+                            Task, "_swi_shapert_ro = mean(RT_ro[Condition == 4 & Task == 'A' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_swi_shapeac = mean(Accuracy[Condition == 4 & Task == 'A'], na.rm = TRUE), " ,
+
+                            Task, "_swi_shapert_ro = mean(RT_ro[Condition == 4 & Task == 'B' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_swi_shapeac = mean(Accuracy[Condition == 4 & Task == 'B'], na.rm = TRUE) " ,
+
+                            # Task, "_rprt = repRT, " ,
+                            # Task, "_rprt_ro = mean(RT_ro[Block != 0 & Condition == 3 & Accuracy == 1], na.rm = TRUE), " ,
+                            # Task, "_rpac = repACC, " ,
+                            # Task, "_swrt = swiRT, " ,
+                            # Task, "_swrt_ro = mean(RT_ro[Block != 0 & Condition == 4 & Accuracy == 1], na.rm = TRUE), " ,
+                            # Task, "_swac = swiACC, " ,
+                            # Task, "_cort = (swiRT - repRT), " ,
+                            # Task, "_cort_ro = mean(RT_ro[Block != 0 & Condition == 4 & Accuracy == 1], na.rm = TRUE) - mean(RT_ro[Block != 0 & Condition == 3 & Accuracy == 1], na.rm = TRUE), " ,
+                            # Task, "_coac = (swiACC - repACC))"
+                            )
+
+    # mutate_string <- paste0(mutate_string, "%>%",
+    #                         "group_by(Subject, Block)", "%>%",
+    #                         "mutate(.,",
+    #                         "BlockRT_ro = mean(RT_ro[Accuracy == 1], na.rm = TRUE))")
+    #
+    # mutate_string <- paste0(mutate_string, "%>%",
+    #                         "ungroup()", "%>%",
+    #                         "group_by(Subject)", "%>%",
+    #                         "mutate(.,",
+    #                         "GcostRT_ro = Fg_rprt_ro - (mean(RT_ro[Block == 1 & Accuracy == 1], na.rm = TRUE) + mean(RT_ro[Block == 2 & Accuracy == 1], na.rm = TRUE))/2,",
+    #                         "LcostRT_ro = Fg_swrt_ro - Fg_rprt_ro)")
 
 
   }
