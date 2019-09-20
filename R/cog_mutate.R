@@ -117,10 +117,14 @@ cog_mutate <- function (df, Task)
   ## CTT ----
   else if (Task == "CTT"){
     mutate_string <- paste0("mutate(.,",
-                            Task, "_sart = SaRT, " ,
-                            Task, "_saac = SaAC, " ,
-                            Task, "_swrt = switchRT - nonSwitchRT, " ,
-                            Task, "_swac = SwitchAC)"
+                            # Task, "_sart = SaRT, " ,
+                            # Task, "_saac = SaAC, " ,
+                            # Task, "_swrt = switchRT - nonSwitchRT, " ,
+                            Task, "_nonswrt = nonSwitchRT, ",
+                            Task, "_nonswac = nonSwitchACC, "
+                            Task, "_swrt = switchRT, " ,
+                            # Task, "_swac = SwitchAC)"
+                            Task, "_swac = switchACC)"
     )
   }
 
