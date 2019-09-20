@@ -1,5 +1,6 @@
 #new col, outlier = NA
 cog_addnooutlier <- function(df, Task, range = 2.5){
+  min_rt <- 250
   if (Task == "SRTCRT"){
     df <- df %>%
       mutate(Condition = ifelse(StimulusLocation == 5, "SRT", "CRT")) %>%
@@ -7,7 +8,8 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
-          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1])|
+          RT <= min_rt,
         NA, RT
       )
       )
@@ -20,7 +22,8 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
-          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1])|
+          RT <= min_rt,
         NA, RT
       )
       )
@@ -32,7 +35,8 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Block != 0 & ACC == 1]) + range*sd(RT[Block != 0 & ACC == 1]) |
-          RT <= mean(RT[Block != 0 & ACC == 1]) - range*sd(RT[Block != 0 & ACC == 1]),
+          RT <= mean(RT[Block != 0 & ACC == 1]) - range*sd(RT[Block != 0 & ACC == 1])|
+          RT <= min_rt,
         NA, RT
       )
       )
@@ -44,7 +48,8 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) + range*sd(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) |
-          RT <= mean(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) - range*sd(RT[Block != 0 & Accuracy == 1], na.rm = TRUE),
+          RT <= mean(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) - range*sd(RT[Block != 0 & Accuracy == 1], na.rm = TRUE)|
+          RT <= min_rt,
         NA, RT
       )
       )
@@ -56,7 +61,8 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
-          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1])|
+          RT <= min_rt,
         NA, RT
       )
       )
@@ -68,7 +74,8 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
-          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1])|
+          RT <= min_rt,
         NA, RT
       )
       )
@@ -80,7 +87,8 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
-          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1])|
+          RT <= min_rt,
         NA, RT
       )
       )
@@ -92,7 +100,8 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
-          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1]),
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1])|
+          RT <= min_rt,
         NA, RT
       )
       )
