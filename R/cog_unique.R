@@ -136,10 +136,15 @@ cog_unique <- function(df, Task){
   ## CTT ----
   else if (Task == "CTT"){
     summary_string <- paste0("summarise(.,",
-                             Task, "_sart = unique(", Task, "_sart), ",
-                             Task, "_saac = unique(", Task, "_saac), ",
+                             Task, "_nonswrt = unique(", Task, "_nonswrt), ",
+                             Task, "_nonswac = unique(", Task, "_nonswac), ",
                              Task, "_swrt = unique(", Task, "_swrt), ",
                              Task, "_swac = unique(", Task, "_swac))"
+
+                             # Task, "_sart = unique(", Task, "_sart), ",
+                             # Task, "_saac = unique(", Task, "_saac), ",
+                             # Task, "_swrt = unique(", Task, "_swrt), ",
+                             # Task, "_swac = unique(", Task, "_swac))"
     )
   }
 
