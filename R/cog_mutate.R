@@ -180,47 +180,57 @@ cog_mutate <- function (df, Task)
   ## HF ----
   else if (Task == "HF"){
     mutate_string <- paste0("mutate(.,",
-                            "MixheartRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 3], na.rm = TRUE),",
-                            "MixflowerRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 4], na.rm = TRUE),",
 
-                            "GcosthRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 3], na.rm = TRUE) - mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE),",
+                            Task, "_pheartrt_ro = mean(RT_ro[Block == 1 & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_pheartac = mean(Accuracy[Block == 1], na.rm = TRUE), " ,
 
-                            "GcostfRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 4], na.rm = TRUE) - mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 2], na.rm = TRUE),",
+                            Task, "_pflowerrt_ro = mean(RT_ro[Block == 2 & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_pflowerac = mean(Accuracy[Block == 2], na.rm = TRUE), " ,
 
-                            "GcostRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Block == 3], na.rm = TRUE) - ((mean(RT_ro[Block != 0 & Accuracy == 1 & Block == 1], na.rm = TRUE) + mean(RT_ro[Block != 0 & Accuracy == 1 & Block == 2], na.rm = TRUE))/2),",
+                            Task, "_mixheartrt_ro = mean(RT_ro[Block == 3 & Accuracy == 1 & Condition == 3], na.rm = TRUE), " ,
+                            Task, "_mixheartac = mean(Accuracy[Block == 3 & Condition == 3], na.rm = TRUE), " ,
+
+                            Task, "_mixflowerrt_ro = mean(RT_ro[Block == 3 & Accuracy == 1 & Condition == 4], na.rm = TRUE), " ,
+                            Task, "_mixflowerac = mean(Accuracy[Block == 3 & Condition == 4], na.rm = TRUE)) "
+
+                            # "MixheartRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 3], na.rm = TRUE),",
+                            # "MixflowerRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 4], na.rm = TRUE),",
+                            # "GcosthRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 3], na.rm = TRUE) - mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE),",
+                            # "GcostfRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 4], na.rm = TRUE) - mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 2], na.rm = TRUE),",
+                            # "GcostRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Block == 3], na.rm = TRUE) - ((mean(RT_ro[Block != 0 & Accuracy == 1 & Block == 1], na.rm = TRUE) + mean(RT_ro[Block != 0 & Accuracy == 1 & Block == 2], na.rm = TRUE))/2),",
 
                             #pc = pure congruent
-                            Task, "_pcrt = mean(RT[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE), " ,
-                            Task, "_pcrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE), " ,
-                            Task, "_pcac = mean(Accuracy[Block != 0 & Condition == 1], na.rm = TRUE), " ,
-                            Task, "_picrt = mean(RT[Block != 0 & Accuracy == 1 & Condition == 2], na.rm = TRUE), " ,
-                            Task, "_picrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 2], na.rm = TRUE), " ,
-                            Task, "_picac = mean(Accuracy[Block != 0 & Condition == 2], na.rm = TRUE), " ,
-                            Task, "_icrt = mean(RT[Block != 0 & Accuracy == 1 & Condition == 2] - RT[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE), " ,
-                            Task, "_icrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 2] - RT[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE), " ,
-                            Task, "_icac = mean(Accuracy[Block != 0 & Condition == 2] - Accuracy[Block != 0 & Condition == 1], na.rm = TRUE), " ,
-
-                            Task, "_Hgrt = GcosthRT, " ,
-                            Task, "_Hgac = GcosthAC, " ,
-                            Task, "_Fgrt = GcostfRT, " ,
-                            Task, "_Fgac = GcostfAC, " ,
-                            Task, "_Gcostrt = GcostRT, " ,
-                            Task, "_Gcostac = GcostAC, " ,
+                            # Task, "_pcrt = mean(RT[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE), " ,
+                            # Task, "_pcrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE), " ,
+                            # Task, "_pcac = mean(Accuracy[Block != 0 & Condition == 1], na.rm = TRUE), " ,
+                            # Task, "_picrt = mean(RT[Block != 0 & Accuracy == 1 & Condition == 2], na.rm = TRUE), " ,
+                            # Task, "_picrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 2], na.rm = TRUE), " ,
+                            # Task, "_picac = mean(Accuracy[Block != 0 & Condition == 2], na.rm = TRUE), " ,
+                            # Task, "_icrt = mean(RT[Block != 0 & Accuracy == 1 & Condition == 2] - RT[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE), " ,
+                            # Task, "_icrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 2] - RT[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE), " ,
+                            # Task, "_icac = mean(Accuracy[Block != 0 & Condition == 2] - Accuracy[Block != 0 & Condition == 1], na.rm = TRUE), " ,
+                            #
+                            # Task, "_Hgrt = GcosthRT, " ,
+                            # Task, "_Hgac = GcosthAC, " ,
+                            # Task, "_Fgrt = GcostfRT, " ,
+                            # Task, "_Fgac = GcostfAC, " ,
+                            # Task, "_Gcostrt = GcostRT, " ,
+                            # Task, "_Gcostac = GcostAC, " ,
 
                             #Block -> 0:practice, 1:pure heart, 2:pure flower, 3:mix
                             #Condition -> 1:pure heart 2:pure flower
                             #             3:heart in mix block  4:flower in mix block
 
-                            Task, "_Hmrt = mean(RT[Block != 0 & Accuracy == 1 & (Condition %in% c(1,3) )], na.rm = TRUE), " ,
-                            Task, "_Hmrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & (Condition %in% c(1,3) )], na.rm = TRUE), " ,
-                            Task, "_Hmac = mean(Accuracy[Block != 0 & (Condition %in% c(1,3) )], na.rm = TRUE), " ,
-                            Task, "_Fmrt = mean(RT[Block != 0 & Accuracy == 1 & (Condition %in% c(2,4) )], na.rm = TRUE), " ,
-                            Task, "_Fmrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & (Condition %in% c(2,4) )], na.rm = TRUE), " ,
-                            Task, "_Fmac = mean(Accuracy[Block != 0 & (Condition %in% c(2,4) )], na.rm = TRUE), " ,
-
-                            Task, "_costrt = mean(RT[Block != 0 & Accuracy == 1 & (Condition %in% c(3,4) )] - RT[Block != 0 & Accuracy == 1 & (Condition %in% c(1,2) )], na.rm = TRUE), " ,
-                            Task, "_costrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & (Condition %in% c(3,4) )] - RT_ro[Block != 0 & Accuracy == 1 & (Condition %in% c(1,2) )], na.rm = TRUE), " ,
-                            Task, "_costac = mean(Accuracy[Block != 0 & (Condition %in% c(3,4) )] - Accuracy[Block != 0 & (Condition %in% c(1,2) )]))"
+                            # Task, "_Hmrt = mean(RT[Block != 0 & Accuracy == 1 & (Condition %in% c(1,3) )], na.rm = TRUE), " ,
+                            # Task, "_Hmrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & (Condition %in% c(1,3) )], na.rm = TRUE), " ,
+                            # Task, "_Hmac = mean(Accuracy[Block != 0 & (Condition %in% c(1,3) )], na.rm = TRUE), " ,
+                            # Task, "_Fmrt = mean(RT[Block != 0 & Accuracy == 1 & (Condition %in% c(2,4) )], na.rm = TRUE), " ,
+                            # Task, "_Fmrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & (Condition %in% c(2,4) )], na.rm = TRUE), " ,
+                            # Task, "_Fmac = mean(Accuracy[Block != 0 & (Condition %in% c(2,4) )], na.rm = TRUE), " ,
+                            #
+                            # Task, "_costrt = mean(RT[Block != 0 & Accuracy == 1 & (Condition %in% c(3,4) )] - RT[Block != 0 & Accuracy == 1 & (Condition %in% c(1,2) )], na.rm = TRUE), " ,
+                            # Task, "_costrt_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & (Condition %in% c(3,4) )] - RT_ro[Block != 0 & Accuracy == 1 & (Condition %in% c(1,2) )], na.rm = TRUE), " ,
+                            # Task, "_costac = mean(Accuracy[Block != 0 & (Condition %in% c(3,4) )] - Accuracy[Block != 0 & (Condition %in% c(1,2) )]))"
     )
   }
 
