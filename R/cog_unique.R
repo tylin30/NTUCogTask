@@ -176,18 +176,6 @@ cog_unique <- function(df, Task){
     )
   }
 
-  Task, "_pheartrt_ro = mean(RT_ro[Block == 1 & Accuracy == 1], na.rm = TRUE), " ,
-  Task, "_pheartac = mean(Accuracy[Block == 1], na.rm = TRUE), " ,
-
-  Task, "_pflowerrt_ro = mean(RT_ro[Block == 2 & Accuracy == 1], na.rm = TRUE), " ,
-  Task, "_pflowerac = mean(Accuracy[Block == 2], na.rm = TRUE), " ,
-
-  Task, "_mixheartrt_ro = mean(RT_ro[Block == 3 & Accuracy == 1 & Condition == 3], na.rm = TRUE), " ,
-  Task, "_mixheartac = mean(Accuracy[Block == 3 & Condition == 3], na.rm = TRUE), " ,
-
-  Task, "_mixflowerrt_ro = mean(RT_ro[Block == 3 & Accuracy == 1 & Condition == 4], na.rm = TRUE), " ,
-  Task, "_mixflowerac = mean(Accuracy[Block == 3 & Condition == 4], na.rm = TRUE)) "
-
   ## HF ----
   else if (Task == "HF"){
     summary_string <- paste0("summarise(.,",
