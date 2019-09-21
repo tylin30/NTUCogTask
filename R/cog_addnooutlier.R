@@ -48,8 +48,7 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       # filter(Block != 0) %>%
       mutate(RT_ro = ifelse(
         RT >= mean(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) + range*sd(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) |
-          RT <= mean(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) - range*sd(RT[Block != 0 & Accuracy == 1], na.rm = TRUE)|
-          RT <= min_rt,
+          RT <= mean(RT[Block != 0 & Accuracy == 1], na.rm = TRUE) - range*sd(RT[Block != 0 & Accuracy == 1], na.rm = TRUE),
         NA, RT
       )
       )
