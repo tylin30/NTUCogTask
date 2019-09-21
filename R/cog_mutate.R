@@ -149,7 +149,7 @@ cog_mutate <- function (df, Task)
                             Task, "_swi_shapeac = mean(Accuracy[Condition == 4 & Task == 'A'], na.rm = TRUE), " ,
 
                             Task, "_swi_shapert_ro = mean(RT_ro[Condition == 4 & Task == 'B' & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_swi_shapeac = mean(Accuracy[Condition == 4 & Task == 'B'], na.rm = TRUE) " ,
+                            Task, "_swi_shapeac = mean(Accuracy[Condition == 4 & Task == 'B'], na.rm = TRUE) )"
 
                             # Task, "_rprt = repRT, " ,
                             # Task, "_rprt_ro = mean(RT_ro[Block != 0 & Condition == 3 & Accuracy == 1], na.rm = TRUE), " ,
