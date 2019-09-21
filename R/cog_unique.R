@@ -143,18 +143,31 @@ cog_unique <- function(df, Task){
     )
   }
 
+
   ## Fg ----
   else if (Task == "Fg"){
     summary_string <- paste0("summarise(.,",
-                             Task, "_rprt = unique(", Task, "_rprt), ",
-                             Task, "_rprt_ro = unique(", Task, "_rprt_ro), ",
-                             Task, "_rpac = unique(", Task, "_rpac), ",
-                             Task, "_swrt = unique(", Task, "_swrt), ",
-                             Task, "_swrt_ro = unique(", Task, "_swrt_ro), ",
-                             Task, "_swac = unique(", Task, "_swac), ",
-                             Task, "_cort = unique(", Task, "_cort), ",
-                             Task, "_cort_ro = unique(", Task, "_cort_ro), ",
-                             Task, "_coac = unique(", Task, "_coac))"
+                             Task, "_shapert_ro = unique(", Task, "_shapert_ro), ",
+                             Task, "_shapeac = unique(", Task, "_shapeac), ",
+                             Task, "_colorrt_ro = unique(", Task, "_colorrt_ro), ",
+                             Task, "_colorac = unique(", Task, "_colorac), ",
+                             Task, "_rep_shapert_ro = unique(", Task, "_rep_shapert_ro), ",
+                             Task, "_rep_shapeac = unique(", Task, "_rep_shapeac), ",
+                             Task, "_rep_colorac = unique(", Task, "_rep_colorac), ",
+                             Task, "_swi_shapert_ro = unique(", Task, "_swi_shapert_ro), ",
+                             Task, "_swi_shapeac = unique(", Task, "_swi_shapeac), ",
+                             Task, "_swi_colorrt_ro = unique(", Task, "_swi_colorrt_ro), ",
+                             Task, "_swi_colorac = unique(", Task, "_swi_colorac))"
+
+                             # Task, "_rprt = unique(", Task, "_rprt), ",
+                             # Task, "_rprt_ro = unique(", Task, "_rprt_ro), ",
+                             # Task, "_rpac = unique(", Task, "_rpac), ",
+                             # Task, "_swrt = unique(", Task, "_swrt), ",
+                             # Task, "_swrt_ro = unique(", Task, "_swrt_ro), ",
+                             # Task, "_swac = unique(", Task, "_swac), ",
+                             # Task, "_cort = unique(", Task, "_cort), ",
+                             # Task, "_cort_ro = unique(", Task, "_cort_ro), ",
+                             # Task, "_coac = unique(", Task, "_coac))"
     )
   }
 
