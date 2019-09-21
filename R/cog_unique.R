@@ -176,42 +176,63 @@ cog_unique <- function(df, Task){
     )
   }
 
+  Task, "_pheartrt_ro = mean(RT_ro[Block == 1 & Accuracy == 1], na.rm = TRUE), " ,
+  Task, "_pheartac = mean(Accuracy[Block == 1], na.rm = TRUE), " ,
+
+  Task, "_pflowerrt_ro = mean(RT_ro[Block == 2 & Accuracy == 1], na.rm = TRUE), " ,
+  Task, "_pflowerac = mean(Accuracy[Block == 2], na.rm = TRUE), " ,
+
+  Task, "_mixheartrt_ro = mean(RT_ro[Block == 3 & Accuracy == 1 & Condition == 3], na.rm = TRUE), " ,
+  Task, "_mixheartac = mean(Accuracy[Block == 3 & Condition == 3], na.rm = TRUE), " ,
+
+  Task, "_mixflowerrt_ro = mean(RT_ro[Block == 3 & Accuracy == 1 & Condition == 4], na.rm = TRUE), " ,
+  Task, "_mixflowerac = mean(Accuracy[Block == 3 & Condition == 4], na.rm = TRUE)) "
+
   ## HF ----
   else if (Task == "HF"){
     summary_string <- paste0("summarise(.,",
-                             Task, "_pcrt = unique(", Task, "_pcrt), ",
-                             Task, "_pcrt_ro = unique(", Task, "_pcrt_ro), ",
-                             Task, "_pcac = unique(", Task, "_pcac), ",
-                             Task, "_picrt = unique(", Task, "_picrt), ",
-                             Task, "_picrt_ro = unique(", Task, "_picrt_ro), ",
-                             Task, "_picac = unique(", Task, "_picac), ",
-                             Task, "_icrt = unique(", Task, "_icrt), ",
-                             Task, "_icrt_ro = unique(", Task, "_icrt_ro), ",
-                             Task, "_icac = unique(", Task, "_icac), ",
+                             Task, "_pheartrt_ro = unique(", Task, "_pheartrt_ro), ",
+                             Task, "_pheartac = unique(", Task, "_pheartac), ",
+                             Task, "_pflowerrt_ro = unique(", Task, "_pflowerrt_ro), ",
+                             Task, "_pflowerac = unique(", Task, "_pflowerac), ",
+                             Task, "_mixheartrt_ro = unique(", Task, "_mixheartrt_ro), ",
+                             Task, "_mixheartac = unique(", Task, "_mixheartac), ",
+                             Task, "_mixflowerrt_ro = unique(", Task, "_mixflowerrt_ro), ",
+                             Task, "_mixflowerac = unique(", Task, "_mixflowerac))"
 
-                             Task, "_Hgrt = unique(", Task, "_Hgrt), ",
-                             Task, "_Hgrt_ro = unique(GcosthRT_ro), ",
-                             Task, "_Hgac = unique(", Task, "_Hgac), ",
-                             Task, "_Fgrt = unique(", Task, "_Fgrt), ",
-                             Task, "_Fgrt_ro = unique(GcostfRT_ro), ",
-                             Task, "_Fgac = unique(", Task, "_Fgac), ",
-                             Task, "_Gcostrt = unique(", Task, "_Gcostrt), ",
-                             Task, "_Gcostrt_ro = unique(GcostRT_ro), ",
-                             Task, "_Gcostac = unique(", Task, "_Gcostac), ",
+                             # Task, "_pcrt = unique(", Task, "_pcrt), ",
+                             # Task, "_pcrt_ro = unique(", Task, "_pcrt_ro), ",
+                             # Task, "_pcac = unique(", Task, "_pcac), ",
+                             # Task, "_picrt = unique(", Task, "_picrt), ",
+                             # Task, "_picrt_ro = unique(", Task, "_picrt_ro), ",
+                             # Task, "_picac = unique(", Task, "_picac), ",
+                             # Task, "_icrt = unique(", Task, "_icrt), ",
+                             # Task, "_icrt_ro = unique(", Task, "_icrt_ro), ",
+                             # Task, "_icac = unique(", Task, "_icac), ",
+
+                             # Task, "_Hgrt = unique(", Task, "_Hgrt), ",
+                             # Task, "_Hgrt_ro = unique(GcosthRT_ro), ",
+                             # Task, "_Hgac = unique(", Task, "_Hgac), ",
+                             # Task, "_Fgrt = unique(", Task, "_Fgrt), ",
+                             # Task, "_Fgrt_ro = unique(GcostfRT_ro), ",
+                             # Task, "_Fgac = unique(", Task, "_Fgac), ",
+                             # Task, "_Gcostrt = unique(", Task, "_Gcostrt), ",
+                             # Task, "_Gcostrt_ro = unique(GcostRT_ro), ",
+                             # Task, "_Gcostac = unique(", Task, "_Gcostac), ",
 
                              #Block -> 0:practice, 1:pure heart, 2:pure flower, 3:mix
                              #Condition -> 1:pure heart 2:pure flower
                              #             3:heart in mix block  4:flower in mix block
-                             Task, "_Hmrt = unique(", Task, "_Hmrt), ",
-                             Task, "_Hmrt_ro = unique(", Task, "_Hmrt_ro), ",
-                             Task, "_Hmac = unique(", Task, "_Hmac), ",
-                             Task, "_Fmrt = unique(", Task, "_Fmrt), ",
-                             Task, "_Fmrt_ro = unique(", Task, "_Fmrt_ro), ",
-                             Task, "_Fmac = unique(", Task, "_Fmac), ",
-
-                             Task, "_costrt = unique(", Task, "_costrt), ",
-                             Task, "_costrt_ro = unique(", Task, "_costrt_ro), ",
-                             Task, "_costac = unique(", Task, "_costac))"
+                             # Task, "_Hmrt = unique(", Task, "_Hmrt), ",
+                             # Task, "_Hmrt_ro = unique(", Task, "_Hmrt_ro), ",
+                             # Task, "_Hmac = unique(", Task, "_Hmac), ",
+                             # Task, "_Fmrt = unique(", Task, "_Fmrt), ",
+                             # Task, "_Fmrt_ro = unique(", Task, "_Fmrt_ro), ",
+                             # Task, "_Fmac = unique(", Task, "_Fmac), ",
+                             #
+                             # Task, "_costrt = unique(", Task, "_costrt), ",
+                             # Task, "_costrt_ro = unique(", Task, "_costrt_ro), ",
+                             # Task, "_costac = unique(", Task, "_costac))"
 
     )
   }
