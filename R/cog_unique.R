@@ -95,6 +95,7 @@ cog_unique <- function(df, Task){
                              Task, "_pgoRT = unique(pgoRT), ",
                              Task, "_goRT = unique(goRT), ",
                              Task, "_goRT_ro = unique(goRT_ro), ",
+                             Task, "_ssd = unique(", Task, "_ssd), ",
                              Task, "_mrt = unique(", Task, "_mrt), ",
                              Task, "_mrt_ro = unique(", Task, "_mrt_ro), ",
                              Task, "_mac = unique(", Task, "_mac), ",
