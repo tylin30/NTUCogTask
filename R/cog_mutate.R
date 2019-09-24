@@ -67,7 +67,7 @@ cog_mutate <- function (df, Task)
   ## SST ----
   else if (Task == "SST"){
     mutate_string <- paste0("mutate(.,",
-                            "goRT_ro = mean(RT_ro[Block != 0 & Block != 'p' & Accuracy == 1 & Condition == 'go'], na.rm = TRUE)",
+                            "goRT_ro = mean(RT_ro[Block != 0 & Block != 'p' & Accuracy == 1 & Condition == 'go'], na.rm = TRUE),",
                             "goRT_quantile50 = quantile(RT_ro[Block != 0 & Block != 'p' & Accuracy == 1 & Condition == 'go'], probs = 0.5, na.rm = TRUE))"
     )
     # quantile(unlist(test2["RT_ro"]), probs = 0.5, na.rm = TRUE)
