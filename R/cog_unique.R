@@ -159,6 +159,7 @@ cog_unique <- function(df, Task){
                              Task, "_colorac = unique(", Task, "_colorac), ",
                              Task, "_rep_shapert_ro = unique(", Task, "_rep_shapert_ro), ",
                              Task, "_rep_shapeac = unique(", Task, "_rep_shapeac), ",
+                             Task, "_rep_colorrt_ro = unique(", Task, "_rep_colorrt_ro), ",
                              Task, "_rep_colorac = unique(", Task, "_rep_colorac), ",
                              Task, "_swi_shapert_ro = unique(", Task, "_swi_shapert_ro), ",
                              Task, "_swi_shapeac = unique(", Task, "_swi_shapeac), ",
