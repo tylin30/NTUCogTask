@@ -11,4 +11,3 @@ library(NTUCogTask)
 
 file → New file → R Markdown → from template → Data Cleaning {NTUCogTask}
 
-### READMA.md not done yet (Q_Q)
