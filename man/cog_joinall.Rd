@@ -42,7 +42,12 @@ cog_joinall(x)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-all_df <- cog_joinall()
+all_ls <- list(SRTCRT_df, MA_df, MAO_df, DMS_df, DR_df, 
+               SM_df, RMS_df, RMO_df, RML_df, SST_df, 
+               As_df, CTT_df, Fg_df, HF_df, RS_df,
+               Sp_df)
+
+All_df <- cog_joinall(all_ls)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
