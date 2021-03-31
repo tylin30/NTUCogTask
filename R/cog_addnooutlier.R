@@ -1,6 +1,6 @@
 #new col, outlier = NA
 cog_addnooutlier <- function(df, Task, range = 2.5){
-  min_rt <- 250
+  min_rt <- 150
   if (Task == "SRTCRT"){
     df <- df %>%
       mutate(Condition = ifelse(StimulusLocation == 5, "SRT", "CRT")) %>%
