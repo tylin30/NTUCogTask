@@ -3,10 +3,10 @@ cog_unique <- function(df, Task){
   if (Task == "SRTCRT"){
     summary_string <- "summarise(.,
     SRT_mrt = unique(SRT_mrt),
-    SRT_mrt_ro = unique(SRT_mrt),
+    SRT_mrt_ro = unique(SRT_mrt_ro),
     SRT_vrt = unique(SRT_vrt),
     CRT_mrt = unique(CRT_mrt),
-    CRT_mrt_ro = unique(CRT_mrt),
+    CRT_mrt_ro = unique(CRT_mrt_ro),
     CRT_vrt = unique(CRT_vrt),
     SRT_mac = unique(SRT_mac),
     SRT_vac = unique(SRT_vac),
