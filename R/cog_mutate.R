@@ -60,7 +60,7 @@ cog_mutate <- function (df, Task)
   ## RML ----
   else if (Task == "RML"){
     mutate_string <- paste0("mutate(.,",
-                            Task, "_mrt = mean(RT[Block != 0 & Accuracy == 1], na.rm = TRUE), ",
+                            Task, "_mrt = mean(RT[Block != 0 & Accuracy == 1 & RT != 'NaN'], na.rm = TRUE), ",
                             Task, "_mac = mean(Accuracy[Block != 0]), ",
                             Task, "_ca = yourSPAN) ")
   }
