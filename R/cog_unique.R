@@ -106,7 +106,8 @@ cog_unique <- function(df, Task){
                              Task, "_int_accadjust = unique(", Task, "_int_accadjust), " ,
                              Task, "_int_accadjust_no05 = unique(", Task, "_int_accadjust_no05), " ,
                              Task, "_index = unique(", Task, "_index), " ,
-                             Task, "_index_no05 = unique(", Task, "_index_no05) " ,
+                             Task, "_index_no05 = unique(", Task, "_index_no05), " ,
+                             Task, "_last10_stopACC = unique(", Task, "_last10_stopACC) " ,
                              ")"
     )
   }
