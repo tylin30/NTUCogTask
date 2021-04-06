@@ -86,6 +86,9 @@ cog_mutate <- function (df, Task)
 
     formalgodf <- df %>% filter(Block == 1, Condition == 'go') %>% select(Trial, Condition, Block)
     last30_trial = as.numeric(tail(unique(formalgodf$Trial),30)[1])
+    
+    stopdf <- df %>% filter(Block == 1, Condition == 'stop') %>% select(Condition, Block, Accuracy)
+    last10_stopACC = mean(as.numeric(tail(stopdf$Accuracy,10)))
     mutate_string <- paste0(mutate_string, "%>%",
                             "mutate(.,",
                             Task, "_last30rt = mean(RT_ro[Block == 1 & Accuracy == 1 & Condition == 'go' & as.numeric(Trial) >= last30_trial], na.rm = TRUE),",
@@ -93,6 +96,7 @@ cog_mutate <- function (df, Task)
                             Task, "_int_accadjust_no05 = (SST_int/(SST_stopac_no05/0.5))*100, ",
                             Task, "_index =", Task, "_last30rt", "/", Task, "_int_accadjust,",
                             Task, "_index_no05 =", Task, "_last30rt", "/", Task, "_int_accadjust_no05,",
+                            Task, "_last10_stopACC = last10_stopACC",
                             ")"
     )
   }
