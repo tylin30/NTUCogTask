@@ -199,7 +199,16 @@ cog_mutate <- function (df, Task)
                             Task, "_mixheartac = mean(Accuracy[Block == 3 & Condition == 3], na.rm = TRUE), " ,
 
                             Task, "_mixflowerrt_ro = mean(RT_ro[Block == 3 & Accuracy == 1 & Condition == 4], na.rm = TRUE), " ,
-                            Task, "_mixflowerac = mean(Accuracy[Block == 3 & Condition == 4], na.rm = TRUE)) "
+                            Task, "_mixflowerac = mean(Accuracy[Block == 3 & Condition == 4], na.rm = TRUE), ",
+                            
+                            Task, "_GcosthRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 3], na.rm = TRUE) - mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE),",
+                            Task, "_GcosthAC = mean(Accuracy[Block != 0 & Condition == 3], na.rm = TRUE) - mean(Accuracy[Block != 0 & Condition == 1], na.rm = TRUE),",
+
+                            Task, "_GcostfRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 4], na.rm = TRUE) - mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 2], na.rm = TRUE),",
+                            Task, "_GcostfAC = mean(Accuracy[Block != 0 & Condition == 4], na.rm = TRUE) - mean(Accuracy[Block != 0 & Condition == 2], na.rm = TRUE),",
+
+                            Task, "_GcostRT_ro = mean(RT_ro[Block == 3 & Accuracy == 1], na.rm = TRUE) - mean(RT_ro[(Block == 1 | Block == 2) & Accuracy == 1], na.rm = TRUE),",
+                            Task, "_GcostAC = mean(Accuracy[Block == 3], na.rm = TRUE) - mean(Accuracy[Block == 1 | Block == 2], na.rm = TRUE))"
 
                             # "MixheartRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 3], na.rm = TRUE),",
                             # "MixflowerRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 4], na.rm = TRUE),",
