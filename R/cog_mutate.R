@@ -157,7 +157,13 @@ cog_mutate <- function (df, Task)
                             Task, "_swi_shapeac = mean(Accuracy[Condition == 4 & Task == 'A'], na.rm = TRUE), " ,
 
                             Task, "_swi_colorrt_ro = mean(RT_ro[Condition == 4 & Task == 'B' & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_swi_colorac = mean(Accuracy[Condition == 4 & Task == 'B'], na.rm = TRUE) )"
+                            Task, "_swi_colorac = mean(Accuracy[Condition == 4 & Task == 'B'], na.rm = TRUE) ,",
+                            
+                            Task, "_GcostRT_ro = mean(RT_ro[(Block == 3 | Block == 4) & Condition == 3 & Accuracy == 1], na.rm = TRUE) - mean(RT_ro[(Block == 1 | Block == 2) & Accuracy == 1], na.rm = TRUE) ,",
+                            Task, "_GcostAC = mean(Accuracy[(Block == 3 | Block == 4) & Condition == 3], na.rm = TRUE) - mean(Accuracy[(Block == 1 | Block == 2)], na.rm = TRUE),",
+                            
+                            Task, "_LcostRT_ro = mean(RT_ro[(Block == 3 | Block == 4) & Condition == '4' & Accuracy == 1], na.rm = TRUE) - mean(RT_ro[(Block == 3 | Block == 4) & Condition == '3' & Accuracy == 1], na.rm = TRUE),",
+                            Task, "_LcostAC = mean(Accuracy[(Block == 3 | Block == 4) & Condition == '4'], na.rm = TRUE) - mean(Accuracy[(Block == 3 | Block == 4) & Condition == '3'], na.rm = TRUE))"
 
                             # Task, "_rprt = repRT, " ,
                             # Task, "_rprt_ro = mean(RT_ro[Block != 0 & Condition == 3 & Accuracy == 1], na.rm = TRUE), " ,
