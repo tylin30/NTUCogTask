@@ -199,7 +199,7 @@ cog_mutate <- function (df, Task)
   }
 
   ## HF ----
-  else if (Task == "HF"){
+   else if (Task == "HF"){
     mutate_string <- paste0("mutate(.,",
 
                             Task, "_pheartrt_ro = mean(RT_ro[Block == 1 & Accuracy == 1], na.rm = TRUE), " ,
@@ -213,6 +213,9 @@ cog_mutate <- function (df, Task)
 
                             Task, "_mixflowerrt_ro = mean(RT_ro[Block == 3 & Accuracy == 1 & Condition == 4], na.rm = TRUE), " ,
                             Task, "_mixflowerac = mean(Accuracy[Block == 3 & Condition == 4], na.rm = TRUE), ",
+                            
+                            Task, "_mixRT_ro = mean(RT_ro[Block == 3 & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_mixAC = mean(Accuracy[Block == 3 & Condition == 4], na.rm = TRUE), ",
                             
                             Task, "_GcosthRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 3], na.rm = TRUE) - mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE),",
                             Task, "_GcosthAC = mean(Accuracy[Block != 0 & Condition == 3], na.rm = TRUE) - mean(Accuracy[Block != 0 & Condition == 1], na.rm = TRUE),",
