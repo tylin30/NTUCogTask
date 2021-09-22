@@ -171,6 +171,9 @@ cog_unique <- function(df, Task){
                              Task, "_swi_colorrt_ro = unique(", Task, "_swi_colorrt_ro), ",
                              Task, "_swi_colorac = unique(", Task, "_swi_colorac),",
                              
+                             Task, "_mixRT_ro = unique(", Task, "_mixRT_ro), ",
+                             Task, "_mixAC = unique(", Task, "_mixAC),",
+                             
                              Task, "_GcostRT_ro = unique(", Task, "_GcostRT_ro), ",
                              Task, "_GcostAC = unique(", Task, "_GcostAC),",
                              Task, "_LcostRT_ro = unique(", Task, "_LcostRT_ro), ",
