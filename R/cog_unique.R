@@ -41,15 +41,19 @@ cog_unique <- function(df, Task){
   }
 
   ## DR ----
-  else if (Task == "DR"){
+   else if (Task == "DR"){
     summary_string <- paste0("summarise(.,",
                              Task, "_11rt = unique(", Task, "_11rt), ",
+                             Task, "_11rt_ro = unique(", Task, "_11rt_ro), ",
                              Task, "_11ac = unique(", Task, "_11ac), ",
                              Task, "_14rt = unique(", Task, "_14rt), ",
+                             Task, "_14rt_ro = unique(", Task, "_14rt_ro), ",
                              Task, "_14ac = unique(", Task, "_14ac), ",
                              Task, "_41rt = unique(", Task, "_41rt), ",
+                             Task, "_41rt_ro = unique(", Task, "_41rt_ro), ",
                              Task, "_41ac = unique(", Task, "_41ac), ",
                              Task, "_44rt = unique(", Task, "_44rt), ",
+                             Task, "_44rt_ro = unique(", Task, "_44rt_ro), ",
                              Task, "_44ac = unique(", Task, "_44ac), ",
 
                              Task, "_mrt = unique(", Task, "_mrt), ",
