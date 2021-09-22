@@ -24,15 +24,22 @@ cog_mutate <- function (df, Task)
   }
 
   ## DR ----
-  else if (Task == "DR"){
+   else if (Task == "DR"){
     mutate_string <- paste0("mutate(.,",
                             Task, "_11rt = e1t1RT, ",
+                            Task, "_11rt_ro = mean(RT_ro[Block != 0 & Encode==1 & Test==1 & ACC == 1], na.rm=TRUE), ",
                             Task, "_11ac = e1t1ACC, ",
+                            
                             Task, "_14rt = e1t4RT, ",
+                            Task, "_14rt_ro = mean(RT_ro[Block != 0 & Encode==1 & Test==4 & ACC == 1], na.rm=TRUE), ",
                             Task, "_14ac = e1t4ACC, ",
+                            
                             Task, "_41rt = e4t1RT, ",
+                            Task, "_41rt_ro = mean(RT_ro[Block != 0 & Encode==4 & Test==1 & ACC == 1], na.rm=TRUE), ",
                             Task, "_41ac = e4t1ACC, ",
+                            
                             Task, "_44rt = e4t4RT, ",
+                            Task, "_44rt_ro = mean(RT_ro[Block != 0 & Encode==4 & Test==4 & ACC == 1], na.rm=TRUE), ",
                             Task, "_44ac = e4t4ACC, ",
 
                             Task, "_mrt = mean(RT[Block != 0 & ACC == 1], na.rm=TRUE), ",
