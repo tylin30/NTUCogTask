@@ -166,6 +166,9 @@ cog_mutate <- function (df, Task)
                             Task, "_swi_colorrt_ro = mean(RT_ro[Condition == 4 & Task == 'B' & Accuracy == 1], na.rm = TRUE), " ,
                             Task, "_swi_colorac = mean(Accuracy[Condition == 4 & Task == 'B'], na.rm = TRUE) ,",
                             
+                            Task, "_mixRT_ro = mean(RT_ro[(Block == 3 | Block == 4) & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_mixAC = mean(Accuracy[(Block == 3 | Block == 4)], na.rm = TRUE) ,",
+                            
                             Task, "_GcostRT_ro = mean(RT_ro[(Block == 3 | Block == 4) & Condition == 3 & Accuracy == 1], na.rm = TRUE) - mean(RT_ro[(Block == 1 | Block == 2) & Accuracy == 1], na.rm = TRUE) ,",
                             Task, "_GcostAC = mean(Accuracy[(Block == 3 | Block == 4) & Condition == 3], na.rm = TRUE) - mean(Accuracy[(Block == 1 | Block == 2)], na.rm = TRUE),",
                             
