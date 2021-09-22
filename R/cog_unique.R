@@ -189,7 +189,7 @@ cog_unique <- function(df, Task){
   }
 
   ## HF ----
-  else if (Task == "HF"){
+   else if (Task == "HF"){
     summary_string <- paste0("summarise(.,",
                              Task, "_pheartrt_ro = unique(", Task, "_pheartrt_ro), ",
                              Task, "_pheartac = unique(", Task, "_pheartac), ",
@@ -199,6 +199,8 @@ cog_unique <- function(df, Task){
                              Task, "_mixheartac = unique(", Task, "_mixheartac), ",
                              Task, "_mixflowerrt_ro = unique(", Task, "_mixflowerrt_ro), ",
                              Task, "_mixflowerac = unique(", Task, "_mixflowerac),",
+                             Task, "_mixRT_ro = unique(", Task, "_mixRT_ro), ",
+                             Task, "_mixAC = unique(", Task, "_mixAC),",
                              Task, "_GcosthRT_ro = unique(", Task, "_GcosthRT_ro),",
                              Task, "_GcosthAC = unique(", Task, "_GcosthAC),",
                              Task, "_GcostfRT_ro = unique(", Task, "_GcostfRT_ro),",
