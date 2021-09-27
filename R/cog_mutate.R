@@ -150,30 +150,30 @@ cog_mutate <- function (df, Task)
     mutate_string <- paste0("mutate(.,",
                             Task, "_shapert_ro = mean(RT_ro[Block == 1 & Accuracy == 1], na.rm = TRUE), " ,
                             Task, "_shapeac = mean(BlockACC[Block == 1], na.rm = TRUE), " ,
-
                             Task, "_colorrt_ro = mean(RT_ro[Block == 2 & Accuracy == 1], na.rm = TRUE), " ,
                             Task, "_colorac = mean(BlockACC[Block == 2], na.rm = TRUE), " ,
-
+                            
                             Task, "_pure_rt_ro = mean(RT_ro[(Block == 1 | Block == 2) & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_pure_rt_condition_ro = mean(RT_condition_ro[(Block == 1 | Block == 2) & Accuracy == 1], na.rm = TRUE), " ,
                             Task, "_pure_ac = mean(Accuracy[(Block == 1 | Block == 2)], na.rm = TRUE) ,",
 
-                            Task, "_rep_shapert_ro = mean(RT_ro[Condition == 3 & Task == 'A' & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_rep_shapeac = mean(Accuracy[Condition == 3 & Task == 'A'], na.rm = TRUE), " ,
-
-                            Task, "_rep_colorrt_ro = mean(RT_ro[Condition == 3 & Task == 'B' & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_rep_colorac = mean(Accuracy[Condition == 3 & Task == 'B'], na.rm = TRUE), " ,
+                            Task, "_rep_shapert_ro = mean(RT_ro[Block != 0 & Condition == 3 & Task == 'A' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_rep_shapeac = mean(Accuracy[Block != 0 & Condition == 3 & Task == 'A'], na.rm = TRUE), " ,
+                            Task, "_rep_colorrt_ro = mean(RT_ro[Block != 0 & Condition == 3 & Task == 'B' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_rep_colorac = mean(Accuracy[Block != 0 & Condition == 3 & Task == 'B'], na.rm = TRUE), " ,
                             
-                            Task, "_rep_rt_ro = mean(RT_ro[Condition == 3 & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_rep_ac = mean(Accuracy[Condition == 3], na.rm = TRUE), " ,
+                            Task, "_rep_rt_ro = mean(RT_ro[Block != 0 & Condition == 3 & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_rep_rt_condition_ro = mean(RT_condition_ro[Block != 0 & Condition == 3 & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_rep_ac = mean(Accuracy[Block != 0 & Condition == 3], na.rm = TRUE), " ,
 
-                            Task, "_swi_shapert_ro = mean(RT_ro[Condition == 4 & Task == 'A' & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_swi_shapeac = mean(Accuracy[Condition == 4 & Task == 'A'], na.rm = TRUE), " ,
-
-                            Task, "_swi_colorrt_ro = mean(RT_ro[Condition == 4 & Task == 'B' & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_swi_colorac = mean(Accuracy[Condition == 4 & Task == 'B'], na.rm = TRUE) ,",
+                            Task, "_swi_shapert_ro = mean(RT_ro[Block != 0 & Condition == 4 & Task == 'A' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_swi_shapeac = mean(Accuracy[Block != 0 & Condition == 4 & Task == 'A'], na.rm = TRUE), " ,
+                            Task, "_swi_colorrt_ro = mean(RT_ro[Block != 0 & Condition == 4 & Task == 'B' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_swi_colorac = mean(Accuracy[Block != 0 & Condition == 4 & Task == 'B'], na.rm = TRUE) ,",
                             
-                            Task, "_swi_rt_ro = mean(RT_ro[Condition == 4 & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_swi_ac = mean(Accuracy[Condition == 4], na.rm = TRUE) ,",
+                            Task, "_swi_rt_ro = mean(RT_ro[Block != 0 & Condition == 4 & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_swi_rt_condition_ro = mean(RT_condition_ro[Block != 0 & Condition == 4 & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_swi_ac = mean(Accuracy[Block != 0 & Condition == 4], na.rm = TRUE) ,",
                             
                             Task, "_GcostRT_ro = mean(RT_ro[(Block == 3 | Block == 4) & Condition == 3 & Accuracy == 1], na.rm = TRUE) - mean(RT_ro[(Block == 1 | Block == 2) & Accuracy == 1], na.rm = TRUE) ,",
                             Task, "_GcostAC = mean(Accuracy[(Block == 3 | Block == 4) & Condition == 3], na.rm = TRUE) - mean(Accuracy[(Block == 1 | Block == 2)], na.rm = TRUE),",
