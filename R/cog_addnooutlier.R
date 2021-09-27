@@ -79,6 +79,20 @@ cog_addnooutlier <- function(df, Task, range = 2.5){
       )
       )
   }
+  
+  # not duplicate, group by condition
+  if(Task == "Fg"){
+    df <- df %>%
+      mutate(Group = ifelse((Condition == 1 | Condition == 2), "pure", ifelse((Condition == 3), 'rep', 'swi'))) %>%
+      group_by(Subject) %>%
+      mutate(RT_condition_ro = ifelse(
+        RT >= mean(RT[Block != 0 & Accuracy == 1]) + range*sd(RT[Block != 0 & Accuracy == 1]) |
+          RT <= mean(RT[Block != 0 & Accuracy == 1]) - range*sd(RT[Block != 0 & Accuracy == 1])|
+          RT <= min_rt,
+        NA, RT
+      )
+      )
+  }
 
   if(Task == "HF"){
     df <- df %>%
