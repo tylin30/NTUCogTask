@@ -201,12 +201,20 @@ cog_unique <- function(df, Task){
                              Task, "_pheartac = unique(", Task, "_pheartac), ",
                              Task, "_pflowerrt_ro = unique(", Task, "_pflowerrt_ro), ",
                              Task, "_pflowerac = unique(", Task, "_pflowerac), ",
+                             
+                             Task, "_pure_RT_ro = unique(", Task, "_pure_RT_ro), ",
+                             Task, "_pure_RT_condition_ro = unique(", Task, "_pure_RT_condition_ro), ",
+                             Task, "_pure_ac = unique(", Task, "_pure_ac), ",
+                             
                              Task, "_mixheartrt_ro = unique(", Task, "_mixheartrt_ro), ",
                              Task, "_mixheartac = unique(", Task, "_mixheartac), ",
                              Task, "_mixflowerrt_ro = unique(", Task, "_mixflowerrt_ro), ",
                              Task, "_mixflowerac = unique(", Task, "_mixflowerac),",
+                             
                              Task, "_mixRT_ro = unique(", Task, "_mixRT_ro), ",
-                             Task, "_mixAC = unique(", Task, "_mixAC),",
+                             Task, "_mix_RT_condition_ro = unique(", Task, "_mix_RT_condition_ro), ",
+                             Task, "_mix_ac = unique(", Task, "_mix_ac),",
+
                              Task, "_GcosthRT_ro = unique(", Task, "_GcosthRT_ro),",
                              Task, "_GcosthAC = unique(", Task, "_GcosthAC),",
                              Task, "_GcostfRT_ro = unique(", Task, "_GcostfRT_ro),",
