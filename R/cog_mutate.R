@@ -210,16 +210,15 @@ cog_mutate <- function (df, Task)
   ## HF ----
    else if (Task == "HF"){
     mutate_string <- paste0("mutate(.,",
-
                             Task, "_pheartrt_ro = mean(RT_ro[Block == 1 & Accuracy == 1], na.rm = TRUE), " ,
                             Task, "_pheartac = mean(Accuracy[Block == 1], na.rm = TRUE), " ,
 
                             Task, "_pflowerrt_ro = mean(RT_ro[Block == 2 & Accuracy == 1], na.rm = TRUE), " ,
                             Task, "_pflowerac = mean(Accuracy[Block == 2], na.rm = TRUE), " ,
                             
-                            Task, "_pure_RT_ro = mean(RT_ro[Group == 'pure' & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_pure_RT_condition_ro = mean(RT_condition_ro[Group == 'pure' & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_pure_ac = mean(Accuracy[Group == 'pure'], na.rm = TRUE), " ,
+                            Task, "_pure_RT_ro = mean(RT_ro[Block != 0 & Group == 'pure' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_pure_RT_condition_ro = mean(RT_condition_ro[Block != 0 & Group == 'pure' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_pure_ac = mean(Accuracy[Block != 0 & Group == 'pure'], na.rm = TRUE), " ,
 
                             Task, "_mixheartrt_ro = mean(RT_ro[Block == 3 & Accuracy == 1 & Condition == 3], na.rm = TRUE), " ,
                             Task, "_mixheartac = mean(Accuracy[Block == 3 & Condition == 3], na.rm = TRUE), " ,
@@ -227,9 +226,9 @@ cog_mutate <- function (df, Task)
                             Task, "_mixflowerrt_ro = mean(RT_ro[Block == 3 & Accuracy == 1 & Condition == 4], na.rm = TRUE), " ,
                             Task, "_mixflowerac = mean(Accuracy[Block == 3 & Condition == 4], na.rm = TRUE), ",
                             
-                            Task, "_mixRT_ro = mean(RT_ro[Group == 'mix' & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_mix_RT_condition_ro = mean(RT_condition_ro[Group == 'mix' & Accuracy == 1], na.rm = TRUE), " ,
-                            Task, "_mix_ac = mean(Accuracy[Group == 'mix'], na.rm = TRUE), " ,
+                            Task, "_mixRT_ro = mean(RT_ro[Block != 0 & Group == 'mix' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_mix_RT_condition_ro = mean(RT_condition_ro[Block != 0 & Group == 'mix' & Accuracy == 1], na.rm = TRUE), " ,
+                            Task, "_mix_ac = mean(Accuracy[Block != 0 & Group == 'mix'], na.rm = TRUE), " ,
                             
                             Task, "_GcosthRT_ro = mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 3], na.rm = TRUE) - mean(RT_ro[Block != 0 & Accuracy == 1 & Condition == 1], na.rm = TRUE),",
                             Task, "_GcosthAC = mean(Accuracy[Block != 0 & Condition == 3], na.rm = TRUE) - mean(Accuracy[Block != 0 & Condition == 1], na.rm = TRUE),",
